@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "369088901429",
+    "firebase_url": "https://rplife-cdd35.firebaseio.com",
+    "project_id": "rplife-cdd35",
+    "storage_bucket": "rplife-cdd35.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:369088901429:android:23c7c9b49e5bd855",
+        "android_client_info": {
+          "package_name": "com.example.dobit.rplife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "369088901429-vgn6orci3v5ud7lienpscsmlkpl8muu1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dobit.rplife",
+            "certificate_hash": "CEFE87C5456EBB0F285E7C7399AB2BC0E4D4CEE8"
+          }
+        },
+        {
+          "client_id": "369088901429-cv24n7viuukj8mjimubhlqsaj57q4151.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXLwOF2gvbkUaNyrgPY4vldqWLPPzAM24"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "369088901429-cv24n7viuukj8mjimubhlqsaj57q4151.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
