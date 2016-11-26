@@ -9,27 +9,15 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/rplifesplash"
     tools:context="com.example.dobit.rplife.SplashActivity">
 
-    <Button
-        android:text="Button"
+    <ProgressBar
+        style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="199dp"
-        android:id="@+id/button2"
+        android:layout_marginBottom="13dp"
+        android:id="@+id/progressBar2"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="105dp"
-        android:layout_marginStart="105dp" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/common_google_signin_btn_icon_dark"
-        android:layout_marginBottom="27dp"
-        android:id="@+id/imageButton"
-        android:layout_above="@+id/button2"
-        android:layout_alignLeft="@+id/button2"
-        android:layout_alignStart="@+id/button2" />
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
