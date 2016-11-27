@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_initialization"
@@ -14,6 +14,24 @@
     android:background="@drawable/initialization_background"
     tools:context="com.example.dobit.rplife.InitializationActivity">
 
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp"
+        android:paddingBottom="0dp"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:paddingTop="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="0dp"
+        >
+
+
+
+
     <ImageView
         android:paddingTop="0dp"
         android:layout_height="94dp"
@@ -24,41 +42,22 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
 
-    <Button
-        android:text="NEXT"
-        android:background="@drawable/initialization_nextbtn"
-        android:layout_width="154dp"
-        android:layout_height="52dp"
-        android:id="@+id/btnNext"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="16dp" />
-
-    <ImageView
+        <ImageView
         android:layout_width="174dp"
-        android:layout_height="134dp"
         app:srcCompat="@drawable/initalization_elima"
         android:id="@+id/imgElima"
         android:layout_below="@+id/imageView5"
         android:layout_alignLeft="@+id/imgErudite"
         android:layout_alignStart="@+id/imgErudite"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
         android:layout_marginEnd="16dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginRight="16dp"
         android:layout_marginStart="16dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="16dp" />
+        android:layout_marginLeft="16dp"
+            android:layout_height="180dp" />
 
     <ImageView
         android:layout_width="121dp"
@@ -68,7 +67,7 @@
         android:layout_above="@+id/btnNext"
         android:layout_alignLeft="@+id/imageView8"
         android:layout_alignStart="@+id/imageView8"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/imgErudite"
         android:layout_marginEnd="16dp"
         app:layout_constraintRight_toRightOf="parent"
@@ -84,7 +83,7 @@
         android:id="@+id/imageView8"
         android:layout_below="@+id/imgElima"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/imgElima"
         android:layout_marginEnd="16dp"
         app:layout_constraintRight_toRightOf="parent"
@@ -95,19 +94,33 @@
 
     <ImageView
         android:layout_width="174dp"
-        android:layout_height="134dp"
         app:srcCompat="@drawable/initalization_erudite"
         android:id="@+id/imgErudite"
         android:layout_above="@+id/imageView10"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintTop_toBottomOf="@+id/imageView8"
         android:layout_marginEnd="16dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginRight="16dp"
         android:layout_marginStart="16dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="16dp" />
+        android:layout_marginLeft="16dp"
+        android:layout_height="180dp" />
 
 
-</android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+
+    <com.github.mmin18.widget.RealtimeBlurView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:realtimeBlurRadius="20dp"
+        app:realtimeOverlayColor="@android:color/transparent"
+        android:visibility="invisible"
+        android:id = "@+id/blurview"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp" />
+</RelativeLayout>

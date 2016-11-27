@@ -2,6 +2,7 @@ package com.example.dobit.rplife;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.Image;
 import android.support.v7.app.AlertDialog;
@@ -16,6 +17,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.mmin18.widget.RealtimeBlurView;
+
 import org.w3c.dom.Text;
 
 import java.lang.reflect.Array;
@@ -23,8 +26,8 @@ import java.lang.reflect.Array;
 public class InitializationActivity extends AppCompatActivity {
     private ImageView mTvElima;
     private ImageView mTvErudite;
-    private Button mBtnNext;
     AlertDialog alertDialog;
+    private com.github.mmin18.widget.RealtimeBlurView blurView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,15 +38,22 @@ public class InitializationActivity extends AppCompatActivity {
         getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 
         mTvElima.setOnClickListener(new View.OnClickListener() {
+            public Dialog dialog = new Dialog(InitializationActivity.this,R.style.Theme_D1NoTitleDim);
+
             @Override
             public void onClick(View v) {
-
-             final Dialog dialog = new Dialog(InitializationActivity.this,R.style.Theme_D1NoTitleDim);
+                blurView.setVisibility(View.VISIBLE);
                 dialog.setContentView(R.layout.activity_initialization_elima);
                 ImageView imgElimaSelect = (ImageView)dialog.findViewById(R.id.imgSelectElima);
                 ImageView imgElimaCancel = (ImageView)dialog.findViewById(R.id.imgElimaCancel);
-                dialog.getWindow().setLayout(1400,2000);
+                //dialog.getWindow().setLayout(1400,2000);
                 dialog.show();
+                dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                    @Override
+                    public void onCancel(DialogInterface dialog) {
+                        blurView.setVisibility(View.INVISIBLE);
+                    }
+                });
 
                 imgElimaSelect.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -55,7 +65,10 @@ public class InitializationActivity extends AppCompatActivity {
                 imgElimaCancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        dialog.dismiss();
+                        if (dialog != null && dialog.isShowing()) {
+                            dialog.dismiss();
+                            blurView.setVisibility(View.INVISIBLE);
+                        }
                     }
                 });
 
@@ -64,37 +77,42 @@ public class InitializationActivity extends AppCompatActivity {
         });
 
         mTvErudite.setOnClickListener(new View.OnClickListener() {
+            public Dialog dialog = new Dialog(InitializationActivity.this,R.style.Theme_D1NoTitleDim);
+
+
             @Override
             public void onClick(View v) {
-                final Dialog dialog = new Dialog(InitializationActivity.this,R.style.Theme_D1NoTitleDim);
+                blurView.setVisibility(View.VISIBLE);
                 dialog.setContentView(R.layout.activity_initialization_erudite);
                 ImageView imgEruditeSelect = (ImageView)dialog.findViewById(R.id.imgSelectErudite);
                 ImageView imgEruditeCancel = (ImageView)dialog.findViewById(R.id.imgEruditeCancel);
-                dialog.getWindow().setLayout(1400,2000);
-                dialog.getWindow().getAttributes().windowAnimations = R.style.SlidingDialogAnimation;
                 dialog.show();
+                dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                    @Override
+                    public void onCancel(DialogInterface dialog) {
+                        blurView.setVisibility(View.INVISIBLE);
+                    }
+                });
+
 
                 imgEruditeSelect.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Toast.makeText(getApplicationContext(),"You're an Erudite!",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(InitializationActivity.this, CharacterCreationActivity.class);
+                        startActivity(intent);
                     }
                 });
 
                 imgEruditeCancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        dialog.dismiss();
+                        if (dialog != null && dialog.isShowing()) {
+                            dialog.dismiss();
+                            blurView.setVisibility(View.INVISIBLE);
+                        }
                     }
                 });
-            }
-        });
-
-        mBtnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(InitializationActivity.this, CharacterCreationActivity.class);
-                startActivity(intent);
             }
         });
 
@@ -105,15 +123,14 @@ public class InitializationActivity extends AppCompatActivity {
     public void init() {
         mTvElima = (ImageView) findViewById(R.id.imgElima);
         mTvErudite = (ImageView) findViewById(R.id.imgErudite);
-        mBtnNext = (Button) findViewById(R.id.btnNext);
-
-//=======
+        blurView = (RealtimeBlurView) findViewById(R.id.blurview);
     }
     private void nextActivity(){
         Intent intent = new Intent(InitializationActivity.this, CharacterCreationActivity.class);
         startActivity(intent);
 //>>>>>>> Stashed changes
     }
+
 
 
 }
