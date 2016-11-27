@@ -18,6 +18,8 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.lang.reflect.Array;
+
 public class InitializationActivity extends AppCompatActivity {
     private ImageView mTvElima;
     private ImageView mTvErudite;
@@ -67,7 +69,7 @@ public class InitializationActivity extends AppCompatActivity {
                 final Dialog dialog = new Dialog(InitializationActivity.this,R.style.Theme_D1NoTitleDim);
                 dialog.setContentView(R.layout.activity_initialization_erudite);
                 ImageView imgEruditeSelect = (ImageView)dialog.findViewById(R.id.imgSelectErudite);
-                ImageView imgElimaCancel = (ImageView)dialog.findViewById(R.id.imgEruditeCancel);
+                ImageView imgEruditeCancel = (ImageView)dialog.findViewById(R.id.imgEruditeCancel);
                 dialog.getWindow().setLayout(1400,2000);
                 dialog.getWindow().getAttributes().windowAnimations = R.style.SlidingDialogAnimation;
                 dialog.show();
@@ -79,7 +81,7 @@ public class InitializationActivity extends AppCompatActivity {
                     }
                 });
 
-                imgElimaCancel.setOnClickListener(new View.OnClickListener() {
+                imgEruditeCancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         dialog.dismiss();
@@ -88,13 +90,29 @@ public class InitializationActivity extends AppCompatActivity {
             }
         });
 
+        mBtnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(InitializationActivity.this, CharacterCreationActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 
-    public void init(){
-        mTvElima = (ImageView)findViewById(R.id.imgElima);
-        mTvErudite = (ImageView)findViewById(R.id.imgErudite);
-        mBtnNext = (Button)findViewById(R.id.btnNext);
+//<<<<<<< Updated upstream
+    public void init() {
+        mTvElima = (ImageView) findViewById(R.id.imgElima);
+        mTvErudite = (ImageView) findViewById(R.id.imgErudite);
+        mBtnNext = (Button) findViewById(R.id.btnNext);
+
+//=======
+    }
+    private void nextActivity(){
+        Intent intent = new Intent(InitializationActivity.this, CharacterCreationActivity.class);
+        startActivity(intent);
+//>>>>>>> Stashed changes
     }
 
 
