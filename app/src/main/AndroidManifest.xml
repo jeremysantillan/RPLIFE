@@ -18,7 +18,9 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".HomePageActivity" />
         <activity android:name=".InitializationActivity" />
-        <activity android:name=".CharacterCreationActivity"></activity>
+        <activity android:name=".CharacterCreationActivity" />
+        <activity android:name=".DialogElima"
+                  android:theme="@android:style/Theme.Dialog"/>
     </application>
 
 </manifest>

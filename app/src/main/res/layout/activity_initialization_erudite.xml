@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_marginLeft="0dp"
+    android:layout_marginRight="0dp"
+    android:paddingRight="0dp"
+    android:paddingLeft="0dp"
+    android:paddingBottom="0dp"
+    android:paddingTop="0dp"
+    android:background="@drawable/erudite_dialog">
+
+
+    <ImageView
+        app:srcCompat="@drawable/erudite_select"
+        android:id="@+id/imgSelectErudite"
+        android:layout_height="40dp"
+        android:layout_width="130dp"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="39dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginStart="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/erudite_cancel"
+        android:id="@+id/imgEruditeCancel"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:scaleType="centerCrop"
+        android:layout_alignTop="@+id/imgSelectErudite"
+        android:layout_toRightOf="@+id/imgSelectErudite"
+        android:layout_toEndOf="@+id/imgSelectErudite" />
+</RelativeLayout>

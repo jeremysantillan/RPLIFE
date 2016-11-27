@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/RPLife.iml" filepath="$PROJECT_DIR$/RPLife.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/riplife.iml" filepath="$PROJECT_DIR$/riplife.iml" />
     </modules>
   </component>
 </project>
