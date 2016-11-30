@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_add_task"
@@ -9,132 +9,101 @@
     android:paddingLeft="0dp"
     android:paddingRight="0dp"
     android:paddingTop="0dp"
+    android:layout_marginTop="0dp"
+    android:layout_marginBottom="0dp"
     android:layout_marginLeft="0dp"
     android:layout_marginRight="0dp"
-    android:theme="@style/Theme.AppCompat.NoActionBar"
+    android:background="@drawable/add_task_dialog"
     tools:context="com.example.dobit.rplife.Home.AddTask">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:srcCompat="@drawable/add_task_dialog"
-        android:id="@+id/ivATBackground"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="12dp"
-        android:layout_marginEnd="12dp"
-        android:layout_alignParentBottom="true"
-        android:padding="0dp" />
-
-    <ImageView
-        android:layout_width="280dp"
-        app:srcCompat="@drawable/txt_description"
-        android:layout_marginBottom="340dp"
-        android:layout_alignLeft="@+id/ivTitle"
-        android:layout_alignStart="@+id/ivTitle"
-        android:id="@+id/ivDescription"
-        android:layout_below="@+id/ivTitle"
-        android:layout_height="50dp" />
-
-    <ImageView
-        app:srcCompat="@drawable/txt_title"
-        android:layout_marginTop="111dp"
-        android:id="@+id/ivTitle"
-        android:layout_width="280dp"
-        android:scaleType="fitCenter"
-        android:layout_height="50dp"
-        android:layout_marginRight="33dp"
-        android:layout_marginEnd="33dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/ivATBackground"
-        android:layout_alignEnd="@+id/ivATBackground" />
-
     <com.example.dobit.rplife.Home.BebasEditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="334dp"
+        android:layout_height="60dp"
         android:inputType="textPersonName"
+        android:background="@drawable/txt_title"
         android:text=""
         android:ems="10"
         android:id="@+id/etTitle"
         android:hint="Title"
+        android:gravity="center"
         android:textColor="?attr/colorPrimaryDark"
         android:textColorHint="@color/colorPrimaryDark"
-        android:layout_above="@+id/ivDescription"
-        android:layout_alignRight="@+id/ivDescription"
-        android:layout_alignEnd="@+id/ivDescription"
-        android:layout_marginRight="29dp"
-        android:layout_marginEnd="29dp" />
-
-    <ImageView
-        app:srcCompat="@drawable/txt_time_start"
-        android:layout_below="@+id/ivDueDate"
-        android:layout_alignLeft="@+id/ivDueDate"
-        android:layout_alignStart="@+id/ivDueDate"
-        android:layout_marginTop="14dp"
-        android:id="@+id/ivTimeStart"
-        android:layout_height="40dp"
-        android:layout_width="125dp" />
-
-    <ImageView
-        android:layout_width="280dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/txt_due_date"
-        android:layout_marginTop="60dp"
-        android:id="@+id/ivDueDate"
-        android:layout_below="@+id/ivTitle"
-        android:layout_alignLeft="@+id/ivDescription"
-        android:layout_alignStart="@+id/ivDescription" />
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="120dp"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.example.dobit.rplife.Home.BebasEditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="334dp"
+        android:layout_height="60dp"
         android:inputType="textPersonName"
+        android:background="@drawable/txt_description"
+        android:gravity="center"
         android:hint="Description"
         android:textColorHint="@color/colorPrimaryDark"
         android:text=""
         android:ems="10"
         android:id="@+id/etDesc"
-        android:layout_alignBottom="@+id/ivDescription"
         android:layout_alignLeft="@+id/etTitle"
-        android:layout_alignStart="@+id/etTitle" />
+        android:layout_alignStart="@+id/etTitle"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/etTitle"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp" />
 
     <com.example.dobit.rplife.Home.BebasEditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="156dp"
+        android:layout_height="56dp"
         android:inputType="time"
         android:ems="10"
         android:id="@+id/etTimeStart"
         android:hint="Time Start"
+        android:gravity="center"
+        android:background="@drawable/txt_time_start"
         android:textColorHint="@color/colorPrimaryDark"
         android:textColor="@color/colorPrimaryDark"
-        android:layout_alignTop="@+id/ivTimeStart"
         android:layout_alignLeft="@+id/etDueDate"
-        android:layout_alignStart="@+id/etDueDate" />
-
-    <ImageView
-        app:srcCompat="@drawable/txt_time_end"
-        android:id="@+id/ivTimeEnd"
-        android:layout_height="40dp"
-        android:layout_width="135dp"
-        android:layout_alignTop="@+id/etTimeStart"
-        android:layout_alignRight="@+id/ivDueDate"
-        android:layout_alignEnd="@+id/ivDueDate" />
+        android:layout_alignStart="@+id/etDueDate"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/etDesc"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/etTimeEnd"
+        android:layout_marginLeft="8dp" />
 
     <com.example.dobit.rplife.Home.BebasEditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="156dp"
+        android:layout_height="56dp"
         android:inputType="time"
         android:ems="10"
         android:id="@+id/etTimeEnd"
         android:hint="Time End"
+        android:gravity="center"
+        android:background="@drawable/txt_time_end"
         android:textColor="?attr/colorPrimaryDark"
         android:textColorHint="@color/colorPrimaryDark"
-        android:layout_marginLeft="33dp"
-        android:layout_marginStart="33dp"
         android:layout_alignBaseline="@+id/etTimeStart"
         android:layout_alignBottom="@+id/etTimeStart"
-        android:layout_alignLeft="@+id/ivTimeEnd"
-        android:layout_alignStart="@+id/ivTimeEnd" />
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/etDesc"
+        android:text="TIME END"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="92dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="92dp"
+        app:layout_constraintHorizontal_bias="0.07" />
 
 
     <com.example.dobit.rplife.Home.BebasTextView
@@ -142,64 +111,87 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etTimeStart"
-        android:layout_alignLeft="@+id/ivTimeStart"
-        android:layout_alignStart="@+id/ivTimeStart"
-        android:layout_marginTop="12dp"
         android:id="@+id/tvRange"
-        android:textColor="@color/colorPrimaryDark" />
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/etDueDate" />
 
     <SeekBar
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_width="334dp"
+        android:layout_height="23dp"
         android:layout_below="@id/tvRange"
-        android:layout_marginLeft="20dp"
         android:id="@+id/seeker"
-        />
-
-    <com.example.dobit.rplife.Home.BebasTextView
-        android:text="0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/seeker"
-        android:layout_marginTop="5dp"
-        android:id="@+id/tvMin"
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_alignLeft="@+id/tvRange"
-        android:layout_alignStart="@+id/tvRange" />
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/etDueDate"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp" />
 
     <com.example.dobit.rplife.Home.BebasEditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="334dp"
+        android:layout_height="60dp"
         android:inputType="date"
         android:ems="10"
         android:id="@+id/etDueDate"
         android:hint="Due Date"
+        android:gravity="center"
+        android:background="@drawable/txt_due_date"
         android:textColor="?attr/colorPrimaryDark"
         android:textColorHint="@color/colorPrimaryDark"
-        android:layout_above="@+id/ivTimeStart"
         android:layout_alignLeft="@+id/etDesc"
-        android:layout_alignStart="@+id/etDesc" />
+        android:layout_alignStart="@+id/etDesc"
+        android:layout_marginTop="92dp"
+        app:layout_constraintTop_toBottomOf="@+id/etDesc"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp" />
 
     <ImageView
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
+        android:layout_width="71dp"
+        android:layout_height="66dp"
         app:srcCompat="@drawable/add_task_cancelbtn"
         android:id="@+id/ivCancel"
-        android:layout_alignTop="@+id/ivAddNewTask"
-        android:layout_alignRight="@+id/ivTimeEnd"
-        android:layout_alignEnd="@+id/ivTimeEnd"
-        android:layout_marginTop="16dp" />
+        android:layout_marginEnd="24dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp" />
 
     <ImageView
         app:srcCompat="@drawable/add_task_checkbtn"
         android:id="@+id/ivAddNewTask"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
-        android:layout_below="@+id/tvMin"
-        android:layout_alignLeft="@+id/tvMin"
-        android:layout_alignStart="@+id/tvMin"
-        android:clickable="true" />
+        android:layout_width="71dp"
+        android:layout_height="66dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="24dp" />
+
+    <TextView
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:id="@+id/tvMin"
+        android:text="0"
+        android:textColor="#000000"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/seeker"
+        android:layout_marginStart="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/ivAddNewTask"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintRight_toLeftOf="@+id/ivCancel"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp" />
 
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

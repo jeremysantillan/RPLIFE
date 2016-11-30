@@ -52,6 +52,7 @@ public class InitializationActivity extends AppCompatActivity {
                     @Override
                     public void onCancel(DialogInterface dialog) {
                         blurView.setVisibility(View.INVISIBLE);
+                        finish();
                     }
                 });
 
@@ -68,6 +69,7 @@ public class InitializationActivity extends AppCompatActivity {
                         if (dialog != null && dialog.isShowing()) {
                             dialog.dismiss();
                             blurView.setVisibility(View.INVISIBLE);
+                            finish();
                         }
                     }
                 });
@@ -91,6 +93,8 @@ public class InitializationActivity extends AppCompatActivity {
                     @Override
                     public void onCancel(DialogInterface dialog) {
                         blurView.setVisibility(View.INVISIBLE);
+                        dialog.dismiss();
+                        finish();
                     }
                 });
 
@@ -101,6 +105,8 @@ public class InitializationActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),"You're an Erudite!",Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(InitializationActivity.this, CharacterCreationActivity.class);
                         startActivity(intent);
+                        dialog.dismiss();
+                        finish();
                     }
                 });
 
@@ -110,6 +116,7 @@ public class InitializationActivity extends AppCompatActivity {
                         if (dialog != null && dialog.isShowing()) {
                             dialog.dismiss();
                             blurView.setVisibility(View.INVISIBLE);
+                            finish();
                         }
                     }
                 });

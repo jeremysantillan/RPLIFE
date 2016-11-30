@@ -35,7 +35,7 @@ public class ReplicaMain extends AppCompatActivity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         stored = getIntent().getParcelableExtra("myData");
@@ -127,7 +127,7 @@ public class ReplicaMain extends AppCompatActivity implements View.OnClickListen
                 break;
 
             case R.id.fab:
-                addTaskSound.start();
+                //addTaskSound.start();
                 Intent intent = new Intent(ReplicaMain.this, AddTask.class);
                 startActivity(intent);
                 break;

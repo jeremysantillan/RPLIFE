@@ -31,7 +31,7 @@ public class AddTask extends AppCompatActivity implements SeekBar.OnSeekBarChang
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
         setContentView(R.layout.activity_add_task);
         add = (ImageView) findViewById(R.id.ivAddNewTask);
         add.setOnClickListener(this);
@@ -92,6 +92,9 @@ public class AddTask extends AppCompatActivity implements SeekBar.OnSeekBarChang
                 Intent intent = new Intent(this, ReplicaMain.class);
                 intent.putExtra("myData", contents2);
                 startActivity(intent);
+
+            case R.id.ivCancel:
+                finish();
         }
     }
 }

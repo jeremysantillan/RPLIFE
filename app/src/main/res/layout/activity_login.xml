@@ -107,7 +107,7 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        app:srcCompat="@drawable/rplifewelcome"
+        app:srcCompat="@drawable/rplifelogo"
         android:id="@+id/imageView3"
         android:layout_above="@+id/imageView"
         android:layout_centerHorizontal="true"

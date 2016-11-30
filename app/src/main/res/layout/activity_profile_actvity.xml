@@ -29,25 +29,14 @@
         android:layout_height="469dp"
         app:srcCompat="@drawable/character"
         android:id="@+id/imgvProfileCharacter"
-        tools:layout_editor_absoluteX="0dp"
         app:layout_constraintTop_toBottomOf="@+id/imgvProfileHeader"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="16dp"
         android:layout_margin="0dp"
         android:paddingRight="0dp"
         android:paddingLeft="0dp"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvProfileName"
-        tools:text="GAYNIEL213"
-        android:textColor="#7ed5a7"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteY="98dp"
-        tools:layout_editor_absoluteX="147dp" />
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintRight_toLeftOf="@+id/imgvStats" />
 
     <ImageView
         android:layout_width="212dp"
@@ -55,8 +44,11 @@
         app:srcCompat="@drawable/profile_character_hp_mp_sp_xp"
         android:id="@+id/imgvHpMpSpEp"
         android:layout_below="@+id/tvProfileName"
-        tools:layout_editor_absoluteY="125dp"
-        tools:layout_editor_absoluteX="152dp" />
+        android:layout_marginEnd="18dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/imgvProfileHeader" />
 
     <ImageView
         android:layout_width="197dp"
@@ -64,46 +56,93 @@
         app:srcCompat="@drawable/profile_character_stats"
         android:id="@+id/imgvStats"
         android:layout_below="@+id/imgvHpMpSpEp"
-        tools:layout_editor_absoluteY="236dp"
-        tools:layout_editor_absoluteX="176dp" />
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/imgvHpMpSpEp" />
 
     <ImageView
         android:layout_width="96dp"
         android:layout_height="189dp"
         app:srcCompat="@drawable/profile_companion"
         android:id="@+id/imgvCompanion"
-        tools:layout_editor_absoluteY="374dp"
-        tools:layout_editor_absoluteX="160dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgvStats"
+        app:layout_constraintVertical_bias="0.91"
+        android:layout_marginEnd="120dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="120dp" />
 
     <ImageView
         android:layout_width="49dp"
         android:layout_height="43dp"
         app:srcCompat="@drawable/profile_achievement_btn"
         android:id="@+id/imgvProfileAchievementBtn"
-        tools:layout_editor_absoluteY="378dp"
-        tools:layout_editor_absoluteX="284dp" />
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/imgvCompanion"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/imgvStats"
+        android:layout_marginTop="10dp"
+        app:layout_constraintHorizontal_bias="1.0" />
     <ImageView
         android:layout_width="49dp"
         android:layout_height="43dp"
         app:srcCompat="@drawable/profile_skills_btn"
         android:id="@+id/imgvProfileSkillsBtn"
-        tools:layout_editor_absoluteY="425dp"
-        tools:layout_editor_absoluteX="284dp" />
+        app:layout_constraintTop_toBottomOf="@+id/imgvProfileAchievementBtn"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/imgvCompanion"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintHorizontal_bias="1.0" />
     <ImageView
         android:layout_width="49dp"
         android:layout_height="43dp"
         app:srcCompat="@drawable/profile_inventory_btn"
         android:id="@+id/imgvProfileInventoryBtn"
-        tools:layout_editor_absoluteY="473dp"
-        tools:layout_editor_absoluteX="284dp" />
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/imgvCompanion"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/imgvProfileSkillsBtn"
+        android:layout_marginTop="3dp"
+        app:layout_constraintHorizontal_bias="1.0" />
 
     <ImageView
         android:layout_width="49dp"
         android:layout_height="43dp"
         app:srcCompat="@drawable/profile_shop_btn"
         android:id="@+id/imgvProfileShopBtn"
-        tools:layout_editor_absoluteY="520dp"
-        tools:layout_editor_absoluteX="284dp" />
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/imgvCompanion"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/imgvProfileInventoryBtn"
+        android:layout_marginTop="3dp"
+        app:layout_constraintHorizontal_bias="1.0" />
+
+    <com.example.dobit.rplife.Home.BebasTextView
+        android:text="GAYNIEL213"
+        android:textSize="36dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:layout_marginTop="13dp"
+        android:textColor="#7ed5a7"
+        app:layout_constraintTop_toBottomOf="@+id/imgvProfileHeader"
+        android:layout_marginEnd="104dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="104dp" />
 
 
 </android.support.constraint.ConstraintLayout>
