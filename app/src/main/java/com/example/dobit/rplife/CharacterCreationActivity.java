@@ -1,18 +1,17 @@
 package com.example.dobit.rplife;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+
+import com.example.dobit.rplife.Home.MainActivity;
 
 public class CharacterCreationActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -22,6 +21,7 @@ public class CharacterCreationActivity extends AppCompatActivity implements View
     private Button btnClothes;
     ImageView imageView;
     private EditText txt_name;
+    private ImageView mImgNextBtn;
 
 
     @Override
@@ -42,13 +42,21 @@ public class CharacterCreationActivity extends AppCompatActivity implements View
         btnClothes = (Button) findViewById(R.id.btnClothes);
         btnClothes.setOnClickListener(this);
         txt_name = (EditText) findViewById(R.id.character_name);
-
+        mImgNextBtn = (ImageView)findViewById(R.id.imgvNextBtn);
         btnFace.setTypeface(myCustomFont);
         btnClothes.setTypeface(myCustomFont);
         btnHair.setTypeface(myCustomFont);
         btnBody.setTypeface(myCustomFont);
 
         txt_name.setTypeface(myCustomFont);
+
+        mImgNextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CharacterCreationActivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 

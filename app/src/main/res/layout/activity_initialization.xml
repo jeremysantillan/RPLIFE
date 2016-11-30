@@ -64,7 +64,6 @@
         android:layout_height="21dp"
         app:srcCompat="@drawable/erudite_text"
         android:id="@+id/imageView10"
-        android:layout_above="@+id/btnNext"
         android:layout_alignLeft="@+id/imageView8"
         android:layout_alignStart="@+id/imageView8"
         android:layout_marginTop="8dp"

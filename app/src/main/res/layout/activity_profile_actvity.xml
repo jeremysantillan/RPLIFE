@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_profile_actvity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    android:layout_marginLeft="0dp"
+    android:layout_marginRight="0dp"
+    android:background="@drawable/profile_bg"
+    tools:context="com.example.dobit.rplife.ProfileActvity">
+
+    <ImageView
+        android:paddingTop="0dp"
+        android:layout_height="94dp"
+        app:srcCompat="@drawable/profile_header"
+        android:scaleType="centerCrop"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        android:layout_width="wrap_content"
+        android:id="@+id/imgvProfileHeader" />
+
+    <ImageView
+        android:layout_width="165dp"
+        android:layout_height="469dp"
+        app:srcCompat="@drawable/character"
+        android:id="@+id/imgvProfileCharacter"
+        tools:layout_editor_absoluteX="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/imgvProfileHeader"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp"
+        android:layout_margin="0dp"
+        android:paddingRight="0dp"
+        android:paddingLeft="0dp"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvProfileName"
+        tools:text="GAYNIEL213"
+        android:textColor="#7ed5a7"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteY="98dp"
+        tools:layout_editor_absoluteX="147dp" />
+
+    <ImageView
+        android:layout_width="212dp"
+        android:layout_height="130dp"
+        app:srcCompat="@drawable/profile_character_hp_mp_sp_xp"
+        android:id="@+id/imgvHpMpSpEp"
+        android:layout_below="@+id/tvProfileName"
+        tools:layout_editor_absoluteY="125dp"
+        tools:layout_editor_absoluteX="152dp" />
+
+    <ImageView
+        android:layout_width="197dp"
+        android:layout_height="138dp"
+        app:srcCompat="@drawable/profile_character_stats"
+        android:id="@+id/imgvStats"
+        android:layout_below="@+id/imgvHpMpSpEp"
+        tools:layout_editor_absoluteY="236dp"
+        tools:layout_editor_absoluteX="176dp" />
+
+    <ImageView
+        android:layout_width="96dp"
+        android:layout_height="189dp"
+        app:srcCompat="@drawable/profile_companion"
+        android:id="@+id/imgvCompanion"
+        tools:layout_editor_absoluteY="374dp"
+        tools:layout_editor_absoluteX="160dp" />
+
+    <ImageView
+        android:layout_width="49dp"
+        android:layout_height="43dp"
+        app:srcCompat="@drawable/profile_achievement_btn"
+        android:id="@+id/imgvProfileAchievementBtn"
+        tools:layout_editor_absoluteY="378dp"
+        tools:layout_editor_absoluteX="284dp" />
+    <ImageView
+        android:layout_width="49dp"
+        android:layout_height="43dp"
+        app:srcCompat="@drawable/profile_skills_btn"
+        android:id="@+id/imgvProfileSkillsBtn"
+        tools:layout_editor_absoluteY="425dp"
+        tools:layout_editor_absoluteX="284dp" />
+    <ImageView
+        android:layout_width="49dp"
+        android:layout_height="43dp"
+        app:srcCompat="@drawable/profile_inventory_btn"
+        android:id="@+id/imgvProfileInventoryBtn"
+        tools:layout_editor_absoluteY="473dp"
+        tools:layout_editor_absoluteX="284dp" />
+
+    <ImageView
+        android:layout_width="49dp"
+        android:layout_height="43dp"
+        app:srcCompat="@drawable/profile_shop_btn"
+        android:id="@+id/imgvProfileShopBtn"
+        tools:layout_editor_absoluteY="520dp"
+        tools:layout_editor_absoluteX="284dp" />
+
+
+</android.support.constraint.ConstraintLayout>

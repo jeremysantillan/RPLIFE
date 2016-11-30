@@ -22,7 +22,15 @@
         <activity
             android:name=".DialogElima"
             android:theme="@android:style/Theme.Dialog" />
-        <activity android:name=".MainActivity"></activity>
+        <activity
+            android:name=".FocusActivity"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity android:name=".ProfileActvity" />
+        <activity android:name=".Home.AddTask" />
+        <activity android:name=".Home.BebasEditText" />
+        <activity android:name=".Home.BebasTextView" />
+        <activity android:name=".Home.MainActivity" />
+        <activity android:name=".Home.ReplicaMain"></activity>
     </application>
 
 </manifest>

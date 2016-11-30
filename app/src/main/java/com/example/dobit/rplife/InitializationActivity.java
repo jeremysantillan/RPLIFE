@@ -128,6 +128,7 @@ public class InitializationActivity extends AppCompatActivity {
     private void nextActivity(){
         Intent intent = new Intent(InitializationActivity.this, CharacterCreationActivity.class);
         startActivity(intent);
+        finish();
 //>>>>>>> Stashed changes
     }
 
