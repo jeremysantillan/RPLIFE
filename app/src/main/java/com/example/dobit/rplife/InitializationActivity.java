@@ -36,7 +36,6 @@ public class InitializationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_initialization);
         init();
         getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-
         mTvElima.setOnClickListener(new View.OnClickListener() {
             public Dialog dialog = new Dialog(InitializationActivity.this,R.style.Theme_D1NoTitleDim);
 
