@@ -13,8 +13,8 @@
     android:background="@android:color/transparent">
 
     <ImageView
-        android:layout_width="367dp"
-        android:layout_height="524dp"
+        android:layout_width="309dp"
+        android:layout_height="442dp"
         app:srcCompat="@drawable/inventory_dialog"
         android:id="@+id/imageView6"
         android:scaleType="fitCenter"
@@ -30,8 +30,8 @@
         android:layout_marginBottom="16dp" />
 
     <ImageView
-        android:layout_width="345dp"
-        android:layout_height="290dp"
+        android:layout_width="271dp"
+        android:layout_height="234dp"
         app:srcCompat="@drawable/inventory_items"
         android:id="@+id/imgvInventoryItems"
         app:layout_constraintTop_toTopOf="@+id/imageView6"
@@ -54,8 +54,8 @@
         android:id="@+id/tvInventoryAll"
         app:layout_constraintBottom_toBottomOf="@+id/imgvInventoryItems"
         app:layout_constraintLeft_toLeftOf="@+id/imageView6"
-        android:layout_marginStart="46dp"
-        android:layout_marginLeft="46dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginLeft="42dp"
         android:layout_marginBottom="6dp"
         android:editable="false" />
 
@@ -64,9 +64,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvInventoryWeapons"
-        android:layout_marginStart="42dp"
+        android:layout_marginStart="22dp"
         app:layout_constraintLeft_toRightOf="@+id/tvInventoryAll"
-        android:layout_marginLeft="42dp"
+        android:layout_marginLeft="22dp"
         app:layout_constraintBottom_toBottomOf="@+id/imgvInventoryItems"
         android:layout_marginBottom="6dp"
         android:editable="false" />
@@ -78,9 +78,9 @@
         android:id="@+id/tvInventoryLoot"
         app:layout_constraintBottom_toBottomOf="@+id/imgvInventoryItems"
         android:layout_marginBottom="6dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="18dp"
         app:layout_constraintLeft_toRightOf="@+id/tvInventoryWeapons"
-        android:layout_marginLeft="32dp"
+        android:layout_marginLeft="18dp"
         android:editable="false" />
 
     <com.example.dobit.rplife.Home.BebasEditText
@@ -90,9 +90,9 @@
         android:id="@+id/tvInventoryPotions"
         app:layout_constraintBottom_toBottomOf="@+id/imgvInventoryItems"
         android:layout_marginBottom="6dp"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="22dp"
         app:layout_constraintLeft_toRightOf="@+id/tvInventoryLoot"
-        android:layout_marginLeft="36dp"
+        android:layout_marginLeft="22dp"
         android:editable="false" />
 
 

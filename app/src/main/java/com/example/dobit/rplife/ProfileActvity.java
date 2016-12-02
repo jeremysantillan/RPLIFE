@@ -18,7 +18,7 @@ public class ProfileActvity extends AppCompatActivity {
     private ImageView mImgInventory;
     private ImageView mImgAchieve;
     private ImageView mImgSkills;
-    private com.github.mmin18.widget.RealtimeBlurView blur;
+    private com.github.mmin18.widget.RealtimeBlurView blurView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,13 +32,13 @@ public class ProfileActvity extends AppCompatActivity {
             public Dialog dialog = new Dialog(ProfileActvity.this,R.style.Theme_D1NoTitleDim);
             @Override
             public void onClick(View v) {
-               //blur.setVisibility(View.VISIBLE);
+               blurView.setVisibility(View.VISIBLE);
                 dialog.setContentView(R.layout.layout_inventory);
                 dialog.show();
                 dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
                     @Override
                     public void onCancel(DialogInterface dialog) {
-                      //  blur.setVisibility(View.INVISIBLE);
+                      blurView.setVisibility(View.INVISIBLE);
                         dialog.dismiss();
                     }
                 });
@@ -50,6 +50,7 @@ public class ProfileActvity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                blurView.setVisibility(View.VISIBLE);
                 dialog.setContentView(R.layout.layout_shop);
                 TextView loots = (TextView) dialog.findViewById(R.id.tvShopLoots);
                 TextView potions = (TextView) dialog.findViewById(R.id.tvShopPotions);
@@ -59,7 +60,7 @@ public class ProfileActvity extends AppCompatActivity {
                 dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
                     @Override
                     public void onCancel(DialogInterface dialog) {
-                        //  blur.setVisibility(View.INVISIBLE);
+                        blurView.setVisibility(View.INVISIBLE);
                         dialog.dismiss();
                     }
                 });
@@ -90,12 +91,13 @@ public class ProfileActvity extends AppCompatActivity {
             public Dialog dialog = new Dialog(ProfileActvity.this,R.style.Theme_D1NoTitleDim);
             @Override
             public void onClick(View v) {
+                blurView.setVisibility(View.VISIBLE);
                 dialog.setContentView(R.layout.layout_achievements);
                 dialog.show();
                 dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
                     @Override
                     public void onCancel(DialogInterface dialog) {
-                        //  blur.setVisibility(View.INVISIBLE);
+                        blurView.setVisibility(View.INVISIBLE);
                         dialog.dismiss();
                     }
                 });
@@ -111,7 +113,7 @@ public class ProfileActvity extends AppCompatActivity {
                 dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
                     @Override
                     public void onCancel(DialogInterface dialog) {
-                        //  blur.setVisibility(View.INVISIBLE);
+                          blurView.setVisibility(View.INVISIBLE);
                         dialog.dismiss();
                     }
                 });
@@ -127,6 +129,8 @@ public class ProfileActvity extends AppCompatActivity {
         mImgInventory = (ImageView) findViewById(R.id.imgvProfileInventoryBtn);
         mImgSkills = (ImageView) findViewById(R.id.imgvProfileSkillsBtn);
         mImgShop = (ImageView) findViewById(R.id.imgvProfileShopBtn);
+        blurView = (RealtimeBlurView) findViewById(R.id.blurview);
+
     }
 
 }
