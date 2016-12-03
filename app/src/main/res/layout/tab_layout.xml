@@ -10,7 +10,6 @@
     android:clickable="true"
     android:id="@+id/cv"
    >
-
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,7 +17,7 @@
 
 
 
-    <!--<ImageView-->
+        <!--<ImageView-->
         <!--android:layout_width="0dp"-->
         <!--android:layout_height="0dp"-->
         <!--android:paddingBottom="0dp"-->
@@ -30,132 +29,134 @@
         <!--tools:layout_editor_absoluteY="8dp"-->
         <!--tools:layout_editor_absoluteX="8dp" />-->
 
-    <com.example.dobit.rplife.Home.BebasTextView
-        android:text="Due Date:"
-        android:layout_width="wrap_content"
-        android:layout_height="13dp"
-        android:id="@+id/tvDueDateDisplay"
-        android:textColor="@color/cardview_light_background"
-        android:layout_marginTop="5dp"
-        card_view:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="5dp"
-        card_view:layout_constraintLeft_toRightOf="@+id/ivCircleGradient"
-        android:layout_marginLeft="5dp" />
+        <com.example.dobit.rplife.Home.BebasTextView
+            android:text="Due Date:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvDueDateDisplay"
+            android:textColor="@color/cardview_light_background"
+            android:layout_marginTop="10dp"
+            card_view:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="5dp"
+            card_view:layout_constraintLeft_toRightOf="@+id/ivCircleGradient"
+            android:layout_marginLeft="5dp" />
 
-    <com.example.dobit.rplife.Home.BebasTextView
-        android:text="66/66/66"
-        android:layout_width="wrap_content"
-        android:layout_height="13dp"
-        android:id="@+id/tvDueDate"
-        android:textColor="@color/cardview_light_background"
-        android:layout_marginStart="3dp"
-        card_view:layout_constraintLeft_toRightOf="@+id/tvDueDateDisplay"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="5dp"
-        card_view:layout_constraintTop_toTopOf="parent" />
+        <com.example.dobit.rplife.Home.BebasTextView
+            android:text="66/66/66"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvDueDate"
+            android:textColor="@color/cardview_light_background"
+            android:layout_marginStart="3dp"
+            card_view:layout_constraintLeft_toRightOf="@+id/tvDueDateDisplay"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="10dp"
+            card_view:layout_constraintTop_toTopOf="parent" />
 
-    <com.example.dobit.rplife.Home.BebasTextView
-        android:text="Do Something"
-        android:layout_width="135dp"
-        android:layout_height="30dp"
-        android:id="@+id/tvTask"
-        android:textColor="@color/cardview_light_background"
-        android:textSize="30dp"
-        card_view:layout_constraintLeft_toRightOf="@+id/ivCircleGradient"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="13dp"
-        card_view:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            card_view:srcCompat="@drawable/timestart_icon"
+            android:id="@+id/ivStartIcon"
+            card_view:layout_constraintLeft_toRightOf="@+id/ivCircleGradient"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            card_view:layout_constraintTop_toBottomOf="@+id/tvTask" />
 
-    <ImageView
-        android:layout_width="13dp"
-        android:layout_height="13dp"
-        card_view:srcCompat="@drawable/timestart_icon"
-        android:id="@+id/ivStartIcon"
-        card_view:layout_constraintLeft_toRightOf="@+id/ivCircleGradient"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        card_view:layout_constraintTop_toBottomOf="@+id/tvTask" />
+        <com.example.dobit.rplife.Home.BebasTextView
+            android:text="Do Something"
+            android:layout_width="135dp"
+            android:layout_height="30dp"
+            android:id="@+id/tvTask"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="30dp"
+            android:layout_marginTop="20dp"
+            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:layout_constraintLeft_toRightOf="@+id/ivCircleGradient"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp" />
 
-    <com.example.dobit.rplife.Home.BebasTextView
-        android:text="1:00 PM"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvStartTime"
-        android:textSize="10dp"
-        android:textColor="@color/cardview_light_background"
-        card_view:layout_constraintTop_toBottomOf="@+id/tvTask"
-        card_view:layout_constraintLeft_toRightOf="@+id/ivStartIcon"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="2dp" />
+        <com.example.dobit.rplife.Home.BebasTextView
+            android:text="1:00 PM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvStartTime"
+            android:textSize="10dp"
+            android:textColor="@color/cardview_light_background"
+            card_view:layout_constraintTop_toBottomOf="@+id/tvTask"
+            card_view:layout_constraintLeft_toRightOf="@+id/ivStartIcon"
+            android:layout_marginStart="3dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="2dp" />
 
-    <ImageView
-        android:layout_width="13dp"
-        android:layout_height="13dp"
-        card_view:srcCompat="@drawable/timestop_btn"
-        android:id="@+id/ivStopIcon"
-        card_view:layout_constraintTop_toBottomOf="@+id/tvTask"
-        android:layout_marginStart="8dp"
-        card_view:layout_constraintLeft_toRightOf="@+id/tvStartTime"
-        android:layout_marginLeft="8dp" />
+        <ImageView
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            card_view:srcCompat="@drawable/timestop_btn"
+            android:id="@+id/ivStopIcon"
+            card_view:layout_constraintTop_toBottomOf="@+id/tvTask"
+            android:layout_marginStart="8dp"
+            card_view:layout_constraintLeft_toRightOf="@+id/tvStartTime"
+            android:layout_marginLeft="8dp" />
 
-    <com.example.dobit.rplife.Home.BebasTextView
-        android:text="2:00 PM"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvStopTime"
-        android:textSize="10dp"
-        android:textColor="@color/cardview_light_background"
-        android:layout_marginStart="3dp"
-        card_view:layout_constraintLeft_toRightOf="@+id/ivStopIcon"
-        android:layout_marginLeft="3dp"
-        card_view:layout_constraintTop_toBottomOf="@+id/tvTask"
-        android:layout_marginTop="2dp" />
+        <com.example.dobit.rplife.Home.BebasTextView
+            android:text="2:00 PM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvStopTime"
+            android:textSize="10dp"
+            android:textColor="@color/cardview_light_background"
+            android:layout_marginStart="3dp"
+            card_view:layout_constraintLeft_toRightOf="@+id/ivStopIcon"
+            android:layout_marginLeft="3dp"
+            card_view:layout_constraintTop_toBottomOf="@+id/tvTask"
+            android:layout_marginTop="2dp" />
 
-    <com.example.dobit.rplife.Home.BebasTextView
-        android:text="Difficulty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvRange"
-        android:textSize="14dp"
-        android:textColor="@color/cardview_light_background"
-        card_view:layout_constraintLeft_toRightOf="@+id/ivCircleGradient"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        card_view:layout_constraintTop_toBottomOf="@+id/tvStopTime" />
+        <com.example.dobit.rplife.Home.BebasTextView
+            android:text="Difficulty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvRange"
+            android:textSize="14dp"
+            android:textColor="@color/cardview_light_background"
+            card_view:layout_constraintLeft_toRightOf="@+id/ivCircleGradient"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            card_view:layout_constraintTop_toBottomOf="@+id/tvStopTime" />
 
-    <ImageView
-        android:layout_height="8dp"
-        card_view:srcCompat="@drawable/red_difficulty_bar"
-        android:id="@+id/ivDifficulty"
-        android:layout_width="159dp"
-        card_view:layout_constraintLeft_toRightOf="@+id/tvRange"
-        card_view:layout_constraintTop_toBottomOf="@+id/tvStopTime"
-        android:layout_marginTop="3dp"
-        card_view:layout_constraintRight_toRightOf="parent"
-        card_view:layout_constraintHorizontal_bias="0.1" />
+        <ImageView
+            android:layout_height="wrap_content"
+            card_view:srcCompat="@drawable/red_difficulty_bar"
+            android:id="@+id/ivDifficulty"
+            android:layout_width="159dp"
+            card_view:layout_constraintLeft_toRightOf="@+id/tvRange"
+            card_view:layout_constraintTop_toBottomOf="@+id/tvStopTime"
+            android:layout_marginTop="3dp"
+            card_view:layout_constraintRight_toRightOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.1" />
 
-    <com.example.dobit.rplife.Home.BebasTextView
-        android:text="Stamina"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvStamina"
-        android:textSize="14dp"
-        android:textColor="@color/cardview_light_background"
-        tools:layout_editor_absoluteY="80dp"
-        tools:layout_editor_absoluteX="130dp" />
+        <com.example.dobit.rplife.Home.BebasTextView
+            android:text="Stamina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvStamina"
+            android:textSize="14dp"
+            android:textColor="@color/cardview_light_background"
+            card_view:layout_constraintLeft_toRightOf="@+id/ivCircleGradient"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            card_view:layout_constraintTop_toBottomOf="@+id/tvRange" />
 
-    <ImageView
-        android:layout_width="125dp"
-        card_view:srcCompat="@drawable/staminabar1"
-        android:id="@+id/ivStamina"
-        android:layout_height="8dp"
-        card_view:layout_constraintLeft_toRightOf="@+id/tvStamina"
-        android:layout_marginTop="8dp"
-        card_view:layout_constraintTop_toBottomOf="@+id/ivDifficulty"
-        card_view:layout_constraintRight_toRightOf="parent"
-        card_view:layout_constraintHorizontal_bias="0.05" />
+        <ImageView
+            android:layout_width="125dp"
+            card_view:srcCompat="@drawable/staminabar1"
+            android:id="@+id/ivStamina"
+            android:layout_height="8dp"
+            card_view:layout_constraintLeft_toRightOf="@+id/tvStamina"
+            android:layout_marginTop="8dp"
+            card_view:layout_constraintTop_toBottomOf="@+id/ivDifficulty"
+            card_view:layout_constraintRight_toRightOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.05" />
 
 
 
@@ -176,16 +177,16 @@
 
         <com.example.dobit.rplife.Home.BebasTextView
             android:text="00"
-            android:layout_width="88dp"
+            android:layout_width="73dp"
             android:id="@+id/tv1"
-            android:textSize="60sp"
+            android:textSize="65sp"
             android:textColor="@color/cardview_light_background"
             card_view:layout_constraintLeft_toLeftOf="@+id/ivCircleGradient"
             card_view:layout_constraintRight_toRightOf="@+id/ivCircleGradient"
             android:textAlignment="center"
+            android:layout_height="59dp"
             card_view:layout_constraintTop_toTopOf="@+id/ivCircleGradient"
-            android:layout_marginTop="24dp"
-            android:layout_height="55dp" />
+            android:layout_marginTop="24dp" />
 
         <ImageView
             android:layout_height="114dp"
@@ -198,14 +199,14 @@
 
         <com.example.dobit.rplife.Home.BebasTextView
             android:text="minutes"
-            android:layout_width="48dp"
-            android:layout_height="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/tvMinutesOrHours"
             android:textColor="@color/cardview_light_background"
             card_view:layout_constraintRight_toRightOf="@+id/ivCircleGradient"
             card_view:layout_constraintLeft_toLeftOf="@+id/ivCircleGradient"
-            card_view:layout_constraintTop_toBottomOf="@+id/tv1"
-            android:textAlignment="center" />
+            card_view:layout_constraintBottom_toBottomOf="@+id/ivCircleGradient"
+            android:layout_marginBottom="28dp" />
 
 
     </android.support.constraint.ConstraintLayout>
