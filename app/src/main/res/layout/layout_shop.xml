@@ -10,7 +10,8 @@
     android:paddingLeft="0dp"
     android:paddingBottom="0dp"
     android:paddingTop="0dp"
-    android:background="@android:color/transparent">
+    android:background="#73000000">
+
 
     <ImageView
         android:layout_width="309dp"
@@ -27,7 +28,9 @@
         android:layout_marginTop="16dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintVertical_bias="0.38" />
 
     <ImageView
         android:layout_width="292dp"
@@ -46,8 +49,50 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginRight="16dp" />
 
+    <com.example.dobit.rplife.Home.BebasTextView
+        android:text="Weapons and Tools"
+        android:layout_height="wrap_content"
+        android:id="@+id/weapons"
+        android:textSize="18sp"
+        android:textColor="#f9690e"
+        app:layout_constraintLeft_toLeftOf="@+id/imageView6"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/imgvShopItems"
+        android:layout_marginBottom="16dp"
+        android:layout_width="120dp"
+        android:clickable="true"/>
 
+    <com.example.dobit.rplife.Home.BebasTextView
+        android:text="Loot"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/loot"
+        android:textSize="18sp"
+        android:textColor="#efefef"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toRightOf="@+id/weapons"
+        android:layout_marginLeft="16dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/imgvShopItems"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"/>
 
+    <com.example.dobit.rplife.Home.BebasTextView
+        android:text="Potions"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/potions"
+        android:textSize="18sp"
+        android:textColor="#efefef"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/imgvShopItems"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintRight_toRightOf="@+id/imgvShopItems"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:clickable="true"/>
 
 
 </android.support.constraint.ConstraintLayout>

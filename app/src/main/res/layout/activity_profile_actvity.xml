@@ -30,8 +30,21 @@
         >
 
         <ImageView
-            android:layout_width="49dp"
-            android:layout_height="43dp"
+            app:srcCompat="@drawable/companion_text"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/companion_txt"
+            android:layout_marginTop="14dp"
+            app:layout_constraintTop_toBottomOf="@+id/imgvStats"
+            app:layout_constraintLeft_toRightOf="@+id/imgvProfileCharacter"
+            android:layout_height="30dp"
+            android:layout_width="60dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp" />
+
+        <ImageView
+            android:layout_width="55dp"
             app:srcCompat="@drawable/profile_shop_btn"
             android:id="@+id/imgvProfileShopBtn"
             android:layout_marginEnd="16dp"
@@ -42,7 +55,8 @@
             android:layout_marginLeft="8dp"
             app:layout_constraintTop_toBottomOf="@+id/imgvProfileInventoryBtn"
             android:layout_marginTop="3dp"
-            app:layout_constraintHorizontal_bias="1.0" />
+            app:layout_constraintHorizontal_bias="1.0"
+            android:layout_height="55dp" />
 
         <com.example.dobit.rplife.Home.BebasTextView
             android:text= "GAYNIEL213"
@@ -50,7 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tvProfileName"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="8dp"
             android:textColor="#7ed5a7"
             app:layout_constraintTop_toBottomOf="@+id/imgvProfileHeader"
             android:layout_marginEnd="104dp"
@@ -58,8 +72,7 @@
             android:layout_marginRight="104dp" />
 
         <ImageView
-            android:layout_width="49dp"
-            android:layout_height="43dp"
+            android:layout_width="55dp"
             app:srcCompat="@drawable/profile_inventory_btn"
             android:id="@+id/imgvProfileInventoryBtn"
             android:layout_marginEnd="16dp"
@@ -70,11 +83,11 @@
             android:layout_marginLeft="8dp"
             app:layout_constraintTop_toBottomOf="@+id/imgvProfileSkillsBtn"
             android:layout_marginTop="3dp"
-            app:layout_constraintHorizontal_bias="1.0" />
+            app:layout_constraintHorizontal_bias="1.0"
+            android:layout_height="55dp" />
 
         <ImageView
-            android:layout_width="49dp"
-            android:layout_height="43dp"
+            android:layout_width="55dp"
             app:srcCompat="@drawable/profile_skills_btn"
             android:id="@+id/imgvProfileSkillsBtn"
             app:layout_constraintTop_toBottomOf="@+id/imgvProfileAchievementBtn"
@@ -85,11 +98,11 @@
             app:layout_constraintLeft_toRightOf="@+id/imgvCompanion"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="3dp"
-            app:layout_constraintHorizontal_bias="1.0" />
+            app:layout_constraintHorizontal_bias="1.0"
+            android:layout_height="55dp" />
 
         <ImageView
-            android:layout_width="49dp"
-            android:layout_height="43dp"
+            android:layout_width="55dp"
             app:srcCompat="@drawable/profile_achievement_btn"
             android:id="@+id/imgvProfileAchievementBtn"
             android:layout_marginEnd="16dp"
@@ -99,35 +112,45 @@
             app:layout_constraintLeft_toRightOf="@+id/imgvCompanion"
             android:layout_marginLeft="8dp"
             app:layout_constraintTop_toBottomOf="@+id/imgvStats"
-            android:layout_marginTop="10dp"
-            app:layout_constraintHorizontal_bias="1.0" />
+            app:layout_constraintHorizontal_bias="1.0"
+            android:layout_height="55dp" />
 
-        <ImageView
-            android:layout_width="96dp"
-            android:layout_height="189dp"
-            app:srcCompat="@drawable/profile_companion"
+        <!--<ImageView-->
+            <!--android:layout_width="100dp"-->
+            <!--app:srcCompat="@drawable/profile_companion"-->
+            <!--android:id="@+id/imgvCompanion"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/imgvStats"-->
+            <!--app:layout_constraintVertical_bias="0.90999997"-->
+            <!--android:layout_marginEnd="110dp"-->
+            <!--app:layout_constraintRight_toRightOf="parent"-->
+            <!--android:layout_marginRight="110dp"-->
+            <!--android:layout_height="230dp" />-->
+        <!---->
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="127dp"
+            android:src ="@drawable/companion_gif"
             android:id="@+id/imgvCompanion"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgvStats"
-            app:layout_constraintVertical_bias="0.90999997"
-            android:layout_marginEnd="120dp"
+            android:layout_marginEnd="65dp"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginRight="120dp" />
+            android:layout_marginRight="65dp"
+            android:layout_height="205dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/imgvStats" />
 
         <ImageView
             android:layout_width="197dp"
-            android:layout_height="138dp"
             app:srcCompat="@drawable/profile_character_stats"
             android:id="@+id/imgvStats"
             android:layout_below="@+id/imgvHpMpSpEp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="8dp"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginRight="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/imgvHpMpSpEp" />
+            android:layout_marginRight="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/imgvHpMpSpEp"
+            android:layout_height="130dp" />
 
         <ImageView
             android:layout_width="212dp"
-            android:layout_height="130dp"
             app:srcCompat="@drawable/profile_character_hp_mp_sp_xp"
             android:id="@+id/imgvHpMpSpEp"
             android:layout_below="@+id/tvProfileName"
@@ -135,46 +158,59 @@
             app:layout_constraintRight_toRightOf="parent"
             android:layout_marginRight="18dp"
             android:layout_marginTop="40dp"
-            app:layout_constraintTop_toBottomOf="@+id/imgvProfileHeader" />
-
-        <ImageView
-            android:layout_width="165dp"
-            android:layout_height="469dp"
-            app:srcCompat="@drawable/character"
-            android:id="@+id/imgvProfileCharacter"
             app:layout_constraintTop_toBottomOf="@+id/imgvProfileHeader"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="16dp"
-            android:layout_margin="0dp"
-            android:paddingRight="0dp"
-            android:paddingLeft="0dp"
-            app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintRight_toLeftOf="@+id/imgvStats" />
+            android:layout_height="125dp" />
 
-        <ImageView
-            android:paddingTop="0dp"
-            android:layout_height="94dp"
-            app:srcCompat="@drawable/profile_header"
-            android:scaleType="centerCrop"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="0dp"
-            android:layout_width="wrap_content"
-            android:id="@+id/imgvProfileHeader" />
+        <!--<pl.droidsonroids.gif.GifImageView-->
+            <!--android:layout_width="165dp"-->
+            <!--android:layout_height="469dp"-->
+            <!--app:srcCompat="@drawable/character_anim"-->
+            <!--android:id="@+id/imgvProfileCharacter"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/imgvProfileHeader"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--android:layout_marginBottom="16dp"-->
+            <!--android:layout_margin="0dp"-->
+            <!--android:paddingRight="0dp"-->
+            <!--android:paddingLeft="0dp"-->
+            <!--app:layout_constraintVertical_bias="0.0"-->
+            <!--app:layout_constraintRight_toLeftOf="@+id/imgvStats" />-->
+
+      <pl.droidsonroids.gif.GifImageView
+          android:src="@drawable/character_gif"
+          android:id="@+id/imgvProfileCharacter"
+          app:layout_constraintTop_toBottomOf="@+id/imgvProfileHeader"
+          app:layout_constraintBottom_toBottomOf="parent"
+          android:paddingRight="0dp"
+          android:paddingLeft="0dp"
+          app:layout_constraintVertical_bias="0.0"
+          android:layout_height="500dp"
+          android:scaleType="centerCrop"
+          android:layout_width="150dp"
+          app:layout_constraintLeft_toLeftOf="parent" />
+
+    <ImageView
+        android:paddingTop="0dp"
+        app:srcCompat="@drawable/profile_header"
+        android:scaleType="fitCenter"
+        android:layout_width="0dp"
+        android:id="@+id/imgvProfileHeader"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_height="70dp"
+        app:layout_constraintTop_toTopOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 
-    <com.github.mmin18.widget.RealtimeBlurView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        app:realtimeBlurRadius="20dp"
-        app:realtimeOverlayColor="@android:color/transparent"
-        android:visibility="invisible"
-        android:id = "@+id/blurview"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="0dp" />
+<com.github.mmin18.widget.RealtimeBlurView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    app:realtimeBlurRadius="20dp"
+    app:realtimeOverlayColor="@android:color/transparent"
+    android:visibility="invisible"
+    android:id = "@+id/blurview"
+    tools:layout_editor_absoluteY="0dp"
+    tools:layout_editor_absoluteX="0dp"
+    android:layout_alignParentTop="true" />
 
 
 </RelativeLayout>
