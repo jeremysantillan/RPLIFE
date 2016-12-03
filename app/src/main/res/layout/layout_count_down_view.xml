@@ -24,8 +24,6 @@
             android:layout_alignParentEnd="true" />
 
         <TextView
-<<<<<<< HEAD
-=======
             android:text=":"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -35,7 +33,6 @@
             android:layout_toEndOf="@+id/tvMinutes" />
 
         <TextView
->>>>>>> 1d8c988a1dbd62f9995615c6460a1ebd3ebc4325
             android:id="@+id/tvSec"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
