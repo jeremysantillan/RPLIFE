@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tvDueDateDisplay"
             android:textColor="@color/cardview_light_background"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             card_view:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="5dp"
             card_view:layout_constraintLeft_toRightOf="@+id/ivCircleGradient"
@@ -51,8 +51,18 @@
             android:layout_marginStart="3dp"
             card_view:layout_constraintLeft_toRightOf="@+id/tvDueDateDisplay"
             android:layout_marginLeft="3dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             card_view:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            card_view:srcCompat="@drawable/timestart_icon"
+            android:id="@+id/ivStartIcon"
+            card_view:layout_constraintLeft_toRightOf="@+id/ivCircleGradient"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            card_view:layout_constraintTop_toBottomOf="@+id/tvTask" />
 
         <com.example.dobit.rplife.Home.BebasTextView
             android:text="Do Something"
@@ -66,16 +76,6 @@
             card_view:layout_constraintLeft_toRightOf="@+id/ivCircleGradient"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp" />
-
-        <ImageView
-            android:layout_width="13dp"
-            android:layout_height="13dp"
-            card_view:srcCompat="@drawable/timestart_icon"
-            android:id="@+id/ivStartIcon"
-            card_view:layout_constraintLeft_toRightOf="@+id/ivCircleGradient"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="5dp"
-            card_view:layout_constraintTop_toBottomOf="@+id/tvTask" />
 
         <com.example.dobit.rplife.Home.BebasTextView
             android:text="1:00 PM"
@@ -178,16 +178,16 @@
 
         <com.example.dobit.rplife.Home.BebasTextView
             android:text="00"
-            android:layout_width="45dp"
+            android:layout_width="73dp"
             android:id="@+id/tv1"
-            android:textSize="50sp"
+            android:textSize="65sp"
             android:textColor="@color/cardview_light_background"
             card_view:layout_constraintLeft_toLeftOf="@+id/ivCircleGradient"
             card_view:layout_constraintRight_toRightOf="@+id/ivCircleGradient"
             android:textAlignment="center"
-            card_view:layout_constraintBottom_toTopOf="@+id/tvMinutesOrHours"
-            android:layout_height="45dp"
-            android:layout_marginBottom="3dp" />
+            android:layout_height="59dp"
+            card_view:layout_constraintTop_toTopOf="@+id/ivCircleGradient"
+            android:layout_marginTop="24dp" />
 
         <ImageView
             android:layout_height="114dp"
