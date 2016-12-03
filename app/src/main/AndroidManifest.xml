@@ -20,12 +20,8 @@
         <activity android:name=".HomePageActivity" />
         <activity android:name=".InitializationActivity" />
         <activity android:name=".CharacterCreationActivity" />
-        <activity
-            android:name=".DialogElima"
-            android:theme="@android:style/Theme.Dialog" />
-        <activity
-            android:name=".FocusActivity"
-            android:theme="@android:style/Theme.Dialog" />
+        <activity android:name=".DialogElima" />
+        <activity android:name=".FocusActivity" />
         <activity android:name=".ProfileActvity" />
         <activity android:name=".Home.AddTask" />
         <activity android:name=".Home.BebasEditText" />

@@ -2,6 +2,7 @@ package com.example.dobit.rplife;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,6 +28,7 @@ public class ProfileActvity extends AppCompatActivity {
         init();
         getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 
+        Typeface myCustomFont = Typeface.createFromAsset(getAssets(), "fonts/BebasNeue.ttf");
 
         mImgInventory.setOnClickListener(new View.OnClickListener() {
             public Dialog dialog = new Dialog(ProfileActvity.this,R.style.Theme_D1NoTitleDim);
@@ -52,9 +54,9 @@ public class ProfileActvity extends AppCompatActivity {
             public void onClick(View v) {
                 blurView.setVisibility(View.VISIBLE);
                 dialog.setContentView(R.layout.layout_shop);
-                TextView loots = (TextView) dialog.findViewById(R.id.tvShopLoots);
-                TextView potions = (TextView) dialog.findViewById(R.id.tvShopPotions);
-                TextView weapons = (TextView) dialog.findViewById(R.id.tvWeaponsAndTools);
+//                TextView loots = (TextView) dialog.findViewById(R.id.tvShopLoots);
+//                TextView potions = (TextView) dialog.findViewById(R.id.tvShopPotions);
+//                TextView weapons = (TextView) dialog.findViewById(R.id.tvWeaponsAndTools);
                 final ImageView imageView = (ImageView) dialog.findViewById(R.id.imgvShopItems);
                 dialog.show();
                 dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
@@ -64,26 +66,26 @@ public class ProfileActvity extends AppCompatActivity {
                         dialog.dismiss();
                     }
                 });
-                loots.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        imageView.setImageDrawable(getResources().getDrawable(R.drawable.shop_loot));
-                    }
-                });
-
-                potions.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        imageView.setImageDrawable(getResources().getDrawable(R.drawable.shop_potions));
-                    }
-                });
-
-                weapons.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        imageView.setImageDrawable(getResources().getDrawable(R.drawable.shop_weapons_and_tools));
-                    }
-                });
+//                loots.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        imageView.setImageDrawable(getResources().getDrawable(R.drawable.shop_loot));
+//                    }
+//                });
+//
+//                potions.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        imageView.setImageDrawable(getResources().getDrawable(R.drawable.shop_potions));
+//                    }
+//                });
+//
+//                weapons.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        imageView.setImageDrawable(getResources().getDrawable(R.drawable.shop_weapons_and_tools));
+//                    }
+//                });
             }
         });
 
@@ -108,6 +110,7 @@ public class ProfileActvity extends AppCompatActivity {
             public Dialog dialog = new Dialog(ProfileActvity.this,R.style.Theme_D1NoTitleDim);
             @Override
             public void onClick(View v) {
+                blurView.setVisibility(View.VISIBLE);
                 dialog.setContentView(R.layout.layout_skills);
                 dialog.show();
                 dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {

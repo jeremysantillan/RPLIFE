@@ -27,48 +27,6 @@
             android:text=":"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView"
-            android:layout_centerVertical="true"
-            android:layout_toLeftOf="@+id/tvMinutes"
-            android:layout_toStartOf="@+id/tvMinutes" />
-
-        <TextView
-            android:id="@+id/tvMinutes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textStyle="bold"
-            android:textSize="30sp"
-            android:gravity="center"
-            android:text="00"
-            tools:layout_editor_absoluteX="48dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/view_progress_bar"
-            app:layout_constraintVertical_bias="0.54"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
-
-        <TextView
-            android:id="@+id/tvHours"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textStyle="bold"
-            android:textSize="30sp"
-            android:gravity="center"
-            android:text="00"
-            tools:layout_editor_absoluteY="82dp"
-            app:layout_constraintLeft_toLeftOf="@+id/tvMinutes"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_alignBaseline="@+id/tvMinutes"
-            android:layout_alignBottom="@+id/tvMinutes"
-            android:layout_toLeftOf="@+id/textView"
-            android:layout_toStartOf="@+id/textView" />
-
-        <TextView
-            android:text=":"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/textView4"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/tvMinutes"
@@ -83,6 +41,7 @@
             android:textSize="30sp"
             android:gravity="center"
             android:text="00"
+            android:textColor="#FFFF"
             tools:layout_editor_absoluteY="82dp"
             app:layout_constraintLeft_toLeftOf="@+id/tvMinutes"
             app:layout_constraintRight_toRightOf="parent"
@@ -90,6 +49,26 @@
             android:layout_alignBottom="@+id/tvMinutes"
             android:layout_toRightOf="@+id/textView4"
             android:layout_toEndOf="@+id/textView4" />
+
+        <TextView
+            android:id="@+id/tvMinutes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:text="00"
+            android:textColor="#FFFF"
+            tools:layout_editor_absoluteX="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view_progress_bar"
+            app:layout_constraintVertical_bias="0.54"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="58dp"
+            android:layout_marginStart="58dp" />
 
     </RelativeLayout>
 

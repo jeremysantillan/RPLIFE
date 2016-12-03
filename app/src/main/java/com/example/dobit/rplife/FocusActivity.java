@@ -6,6 +6,7 @@ import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -44,23 +45,19 @@ public class FocusActivity extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 
         // etTime = (EditText) findViewById(R.id.et_total_time);
         countDownView = (CircleCountDownView) findViewById(R.id.circle_count_down_view);
         startTimerBt = (Button) findViewById(R.id.startTimer);
-        cancelTimerBt = (Button) findViewById(R.id.cancleTimer);
+        cancelTimerBt = (Button) findViewById(R.id.cancelTimer);
         mTvMinutes = (TextView) findViewById(R.id.tvMinutes);
         mTvSeconds = (TextView) findViewById(R.id.tvSec);
-
+        countDownView.setVisibility(View.VISIBLE);
         // set click listeners
         startTimerBt.setOnClickListener(this);
         cancelTimerBt.setOnClickListener(this);
 
-        ListView listView = (ListView) findViewById(R.id.listView);
-        TaskController controller = new TaskController();
-        TaskAdapter adapter = new TaskAdapter(this, R.layout.layout_listview_task,
-                controller.getTask());
-        listView.setAdapter(adapter);
     }
 
     protected void startCountDown(final View view) {
@@ -71,7 +68,7 @@ public class FocusActivity extends Activity implements View.OnClickListener {
 
         //etTime.getText().clear();
         view.setVisibility(View.GONE); // hide button
-        countDownView.setVisibility(View.VISIBLE); // show progress view
+       // show progress view
         cancelTimerBt.setVisibility(View.VISIBLE); // show cancel button
 
         progress = 1;
@@ -191,7 +188,7 @@ public class FocusActivity extends Activity implements View.OnClickListener {
             case R.id.startTimer:
                 startCountDown(view);
                 break;
-            case R.id.cancleTimer:
+            case R.id.cancelTimer:
                 stopCountDown(view);
                 break;
         }

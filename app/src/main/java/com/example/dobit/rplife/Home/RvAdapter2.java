@@ -1,14 +1,18 @@
 package com.example.dobit.rplife.Home;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.dobit.rplife.FocusActivity;
 import com.example.dobit.rplife.R;
 
 import java.util.ArrayList;
@@ -43,6 +47,7 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
 
     @Override
     public void onBindViewHolder(final MyViewHolder2 myViewHolder2, final int position) {
+
         myViewHolder2.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,6 +60,12 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
                 temp = position;
                 Log.d("Gwapo3", temp+"");
                 myViewHolder2.sidebar.setImageResource(data.get(position).sidebar);
+                final Dialog dialog = new Dialog(context,R.style.Theme_D1NoTitleDim);
+                dialog.setContentView(R.layout.activity_main);
+                Button buttonStart = (Button) dialog.findViewById(R.id.startTimer);
+                Button buttonCancel = (Button) dialog.findViewById(R.id.cancelTimer);
+                dialog.show();
+
             }
         });
 
@@ -90,7 +101,6 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
 
         public MyViewHolder2(View itemView) {
             super(itemView);
-
             sidebar = (ImageView) itemView.findViewById(R.id.iv2);
 //            sidebar2 = (ImageView) itemView.findViewById(R.id.ivSide);
             something = (TextView) itemView.findViewById(R.id.tv1);
@@ -104,4 +114,6 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
 //            image = (ImageView) itemView.findViewById(R.id.iv1);
         }
     }
+
+
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
@@ -12,53 +12,68 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.dobit.rplife.FocusActivity">
 
-    <com.example.dobit.rplife.widget.CircleCountDownView
-        android:id="@+id/circle_count_down_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_gravity="center_horizontal"
-        android:visibility="gone"
-        android:layout_margin="5dp"/>
+    <ImageView
+        android:layout_width="275dp"
+        android:layout_height="504dp"
+        app:srcCompat="@drawable/focus_bg"
+        android:id="@+id/imageView12"
+        tools:layout_editor_absoluteY="39dp"
+        tools:layout_editor_absoluteX="25dp" />
+
+    <com.example.dobit.rplife.Home.BebasEditText
+        android:text="CODE ANDROID"
+        android:textColor="#FFFF"
+        android:background="#006442"
+        android:layout_width="258dp"
+        android:layout_height="43dp"
+        android:id="@+id/textView2"
+        android:textSize="36sp"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteY="487dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="24dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintHorizontal_bias="0.58" />
 
     <Button
-        android:id="@+id/cancleTimer"
+        android:id="@+id/cancelTimer"
+        android:layout_width="166dp"
+        android:layout_height="44dp"
+        android:text="START"
+        app:layout_constraintRight_toRightOf="@+id/imageView12"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        app:layout_constraintLeft_toLeftOf="@+id/imageView12"
+        app:layout_constraintHorizontal_bias="0.63"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        android:layout_marginBottom="112dp" />
+
+    <com.example.dobit.rplife.widget.CircleCountDownView
+        android:id="@+id/circle_count_down_view"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_gravity="center_horizontal"
         android:visibility="gone"
-        android:layout_marginTop="15dp"
-        android:layout_width="354dp"
-        android:layout_height="wrap_content"
-        android:text="Stop CountDown" />
+        android:layout_margin="5dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp" />
+
 
     <Button
         android:id="@+id/startTimer"
-        android:layout_marginTop="15dp"
-        android:layout_width="354dp"
-        android:layout_height="wrap_content"
-        android:text="Start CountDown" />
+        android:layout_width="166dp"
+        android:layout_height="44dp"
+        android:text="START"
+        app:layout_constraintRight_toRightOf="@+id/imageView12"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        app:layout_constraintLeft_toLeftOf="@+id/imageView12"
+        app:layout_constraintHorizontal_bias="0.63"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        android:layout_marginBottom="112dp" />
 
-    <TextView
-        android:text="KILL YOURSELF"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        android:textSize="36sp"
-        android:textAlignment="center" />
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/focus_difficulty"
-        android:id="@+id/imageView" />
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/focus_stamina"
-        android:id="@+id/imageView2" />
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/listView" />
-
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

@@ -13,8 +13,8 @@
     android:background="@android:color/transparent">
 
     <ImageView
-        android:layout_width="367dp"
-        android:layout_height="524dp"
+        android:layout_width="309dp"
+        android:layout_height="442dp"
         app:srcCompat="@drawable/skills_dialog"
         android:id="@+id/imageView6"
         android:scaleType="fitCenter"

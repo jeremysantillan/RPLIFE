@@ -30,8 +30,8 @@
         android:layout_marginBottom="16dp" />
 
     <ImageView
-        android:layout_width="271dp"
-        android:layout_height="234dp"
+        android:layout_width="292dp"
+        android:layout_height="260dp"
         app:srcCompat="@drawable/shop_weapons_and_tools"
         android:id="@+id/imgvShopItems"
         app:layout_constraintTop_toTopOf="@+id/imageView6"
@@ -46,46 +46,7 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginRight="16dp" />
 
-    <com.example.dobit.rplife.Home.BebasEditText
-        android:text="WEAPONS AND TOOLS"
-        android:textColor="#F9690E"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvWeaponsAndTools"
-        app:layout_constraintBottom_toBottomOf="@+id/imgvShopItems"
-        app:layout_constraintLeft_toLeftOf="@+id/imageView6"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginBottom="6dp"
-        android:editable="false" />
 
-    <com.example.dobit.rplife.Home.BebasEditText
-        android:text="LOOT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvShopLoots"
-        android:layout_marginStart="16dp"
-        app:layout_constraintLeft_toRightOf="@+id/tvWeaponsAndTools"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imgvShopItems"
-        android:layout_marginBottom="8dp"
-        android:editable="false" />
-
-    <com.example.dobit.rplife.Home.BebasEditText
-        android:text="Potions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvShopPotions"
-        app:layout_constraintBottom_toBottomOf="@+id/imgvShopItems"
-        android:layout_marginBottom="6dp"
-        android:editable="false"
-        app:layout_constraintRight_toRightOf="@+id/imgvShopItems"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginStart="36dp"
-        app:layout_constraintLeft_toRightOf="@+id/tvShopLoots"
-        android:layout_marginLeft="36dp"
-        app:layout_constraintHorizontal_bias="0.66" />
 
 
 
