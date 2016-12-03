@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_boss_fight"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    android:layout_margin="0dp"
+    tools:context="com.example.dobit.rplife.BossFight">
+
+    <pl.droidsonroids.gif.GifImageView
+    android:layout_width="382dp"
+    android:layout_height="495dp"
+    android:src="@drawable/boss_anim"
+        android:layout_margin="0dp"
+    android:padding="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="1dp" />
+
+    <ImageView
+        android:layout_width="383dp"
+        android:layout_height="263dp"
+        app:srcCompat="@drawable/boss_fight_contents1"
+        android:id="@+id/imageView13"
+        android:scaleType="centerCrop"
+        android:layout_margin="0dp"
+        android:padding="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

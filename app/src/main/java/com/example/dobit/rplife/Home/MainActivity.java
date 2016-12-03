@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.example.dobit.rplife.BossFight;
 import com.example.dobit.rplife.ProfileActvity;
 import com.example.dobit.rplife.R;
 
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ArrayList<Contents2> contents2 = new ArrayList<>();
     ImageView mImgvProfilePic;
 //    ArrayAdapter<Contents2> mAdapter;
+    ImageView btnPartyView;
 
     int check = 0;
     int flag = 0;
@@ -85,6 +87,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         adapter2.notifyDataSetChanged();
         recyclerView.setAdapter(adapter2);
         addTaskSound = MediaPlayer.create(this, R.raw.whatcha);
+
+        btnPartyView = (ImageView) findViewById(R.id.btn_partyview);
+        btnPartyView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BossFight.class);
+                startActivity(intent);
+            }
+        });
 
         //profile page
         mImgvProfilePic.setOnClickListener(new View.OnClickListener() {

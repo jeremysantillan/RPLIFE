@@ -2,25 +2,24 @@ package com.example.dobit.rplife;
 
 import android.app.Activity;
 import android.content.Context;
+import android.media.Image;
 import android.os.CountDownTimer;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.dobit.rplife.adapter.TaskAdapter;
-import com.example.dobit.rplife.controller.TaskController;
-import com.example.dobit.rplife.widget.CircleCountDownView;
+import com.example.dobit.rplife.Home.CircleCountDownView;
 
 public class FocusActivity extends Activity implements View.OnClickListener {
 
     protected EditText etTime;
     protected CircleCountDownView countDownView;
-    protected Button startTimerBt, cancelTimerBt;
+    protected ImageView startTimerBt, cancelTimerBt;
     private TextView mTvMinutes;
     private TextView mTvSeconds;
     private TextView mTvTimer;
@@ -43,24 +42,19 @@ public class FocusActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
         // etTime = (EditText) findViewById(R.id.et_total_time);
         countDownView = (CircleCountDownView) findViewById(R.id.circle_count_down_view);
-        startTimerBt = (Button) findViewById(R.id.startTimer);
-        cancelTimerBt = (Button) findViewById(R.id.cancleTimer);
+        startTimerBt = (ImageView) findViewById(R.id.startTimer);
+        cancelTimerBt = (ImageView) findViewById(R.id.cancelTimer);
         mTvMinutes = (TextView) findViewById(R.id.tvMinutes);
         mTvSeconds = (TextView) findViewById(R.id.tvSec);
-
         // set click listeners
         startTimerBt.setOnClickListener(this);
         cancelTimerBt.setOnClickListener(this);
 
-        ListView listView = (ListView) findViewById(R.id.listView);
-        TaskController controller = new TaskController();
-        TaskAdapter adapter = new TaskAdapter(this, R.layout.layout_listview_task,
-                controller.getTask());
-        listView.setAdapter(adapter);
     }
 
     protected void startCountDown(final View view) {
@@ -71,7 +65,8 @@ public class FocusActivity extends Activity implements View.OnClickListener {
 
         //etTime.getText().clear();
         view.setVisibility(View.GONE); // hide button
-        countDownView.setVisibility(View.VISIBLE); // show progress view
+       // show progress view
+        countDownView.setVisibility(View.VISIBLE);
         cancelTimerBt.setVisibility(View.VISIBLE); // show cancel button
 
         progress = 1;
@@ -191,7 +186,7 @@ public class FocusActivity extends Activity implements View.OnClickListener {
             case R.id.startTimer:
                 startCountDown(view);
                 break;
-            case R.id.cancleTimer:
+            case R.id.cancelTimer:
                 stopCountDown(view);
                 break;
         }
