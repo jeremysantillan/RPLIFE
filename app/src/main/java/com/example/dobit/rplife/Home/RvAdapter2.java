@@ -2,7 +2,10 @@ package com.example.dobit.rplife.Home;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.Image;
+import android.os.CountDownTimer;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dobit.rplife.FocusActivity;
 import com.example.dobit.rplife.R;
@@ -28,6 +32,28 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
     ArrayList<Contents2> data;
     LayoutInflater inflater;
 //    ImageView sidebar;
+
+    //focus  declarations
+    protected CircleCountDownView countDownView;
+    protected ImageView startTimerBt, cancelTimerBt;
+    private TextView mTvMinutes;
+    private TextView mTvSeconds;
+    private TextView mTvTimer;
+    int progress;
+    int endTime;
+    CountDownTimer countDownTimer;
+
+    int count = 0;
+    int seconds =59;
+    int minutes;
+    int hours=0;
+    int time;
+    Dialog dialog;
+
+    ////////////////////////////////////////////////////////
+
+    //dialog declarations
+
 
     public RvAdapter2(Context context, ArrayList<Contents2> data) {
         this.context = context;
@@ -54,18 +80,128 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
                 if(check[temp] == 1){
                     myViewHolder2.sidebar.setImageResource(data.get(position).sidebar2);
 //                   myViewHolder2.sidebar.setImageDrawable(R.drawable.orange_sidebar);
+//                    Intent intent = new Intent(context, FocusActivity.class);
+//                    context.startActivity(intent);
 
                 }
+
+                dialog = new Dialog(context,R.style.Theme_D1NoTitleDim);
+                dialog.getWindow().setLayout(1300,2000);
+//                dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+                dialog.setContentView(R.layout.activity_main);
+                countDownView = (CircleCountDownView)dialog.findViewById(R.id.circle_count_down_view);
+                startTimerBt  = (ImageView) dialog.findViewById(R.id.startTimer);
+                cancelTimerBt = (ImageView) dialog.findViewById(R.id.cancelTimer);
+                mTvMinutes = (TextView)dialog.findViewById(R.id.tvMinutes);
+                mTvSeconds = (TextView)dialog.findViewById(R.id.tvSec);
+                dialog.show();
+
+                progress = 0;
+                endTime = 25; // up to finish time
+                minutes = endTime;
+                time= endTime;
+
+                countDownView.setVisibility(View.VISIBLE);
+                countDownView.setProgress(progress,time);
+
+                startTimerBt.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(final View view) {
+                        //String timeInterval = etTime.getText().toString();
+                        //dialog.setContentView(R.layout.layout_count_down_view);
+
+                        //etTime.getText().clear();
+                        view.setVisibility(View.GONE); // hide button
+                        // show progress view
+                        cancelTimerBt.setVisibility(View.VISIBLE); // show cancel button
+
+                        progress = 1;
+                        endTime = 25; // up to finish time
+                        minutes = endTime-1;
+                        time= endTime*60;
+
+                        countDownTimer = new CountDownTimer(time * 1000 /*finishTime**/, 1000 /*interval**/) {
+                            @Override
+                            public void onTick(long millisUntilFinished) {
+                               countDownView.setProgress(progress, time );
+                                progress = progress + 1;
+
+                                if(seconds >= 0)
+                                {
+
+                                    mTvMinutes.setText(minutes+"");
+                                    if(seconds <10){
+                                        mTvSeconds.setText("0"+seconds);
+                                        seconds--;
+                                        count++;
+                                    }else{
+                                        mTvSeconds.setText(seconds+"");
+                                        seconds--;
+                                        count++;
+                                    }
+
+                                }
+
+                                if(count == 60 && minutes != 0)
+                                {
+                                    minutes--;
+                                    count = 0;
+                                    mTvMinutes.setText(minutes+"");
+                                    seconds = 59;
+                                }
+
+                            }
+
+                            @Override
+                            public void onFinish() {
+                                countDownView.setProgress(progress, time);
+                                view.setVisibility(View.VISIBLE);
+                                cancelTimerBt.setVisibility(View.GONE);
+                                minutes=0;
+                                seconds=59;
+                            }
+                        };
+                        countDownTimer.start(); // start timer
+
+//        // hide softkeyboard
+//        View currentFocus = this.getCurrentFocus();
+//        if (currentFocus != null) {
+//            InputMethodManager imm = (InputMethodManager)this.getSystemService(Context.INPUT_METHOD_SERVICE);
+//            imm.hideSoftInputFromWindow(currentFocus.getWindowToken(), 0);
+//        }
+                    }
+                });
+
+                cancelTimerBt.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        countDownView.setProgress(time,time);
+                        countDownTimer.cancel();
+                        seconds=59;
+                        countDownView.setVisibility(View.INVISIBLE);
+                        cancelTimerBt.setVisibility(View.GONE);
+                        startTimerBt.setVisibility(View.VISIBLE);
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                    @Override
+                    public void onCancel(DialogInterface dialog) {
+                        dialog.dismiss();
+                        countDownView.setProgress(time,time);
+                        countDownTimer.cancel();
+                        seconds=59;
+                        countDownView.setVisibility(View.INVISIBLE);
+                        cancelTimerBt.setVisibility(View.GONE);
+                        startTimerBt.setVisibility(View.VISIBLE);
+                    }
+                });
+
                 check[position] = 1;
                 temp = position;
                 Log.d("Gwapo3", temp+"");
                 myViewHolder2.sidebar.setImageResource(data.get(position).sidebar);
-                final Dialog dialog = new Dialog(context,R.style.Theme_D1NoTitleDim);
-                dialog.setContentView(R.layout.activity_main);
-                Button buttonStart = (Button) dialog.findViewById(R.id.startTimer);
-                Button buttonCancel = (Button) dialog.findViewById(R.id.cancelTimer);
-                dialog.show();
-
             }
         });
 
@@ -84,6 +220,19 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
     public int getItemCount() {
         return data.size();
     }
+
+//    @Override
+//    public void onClick(View v) {
+//        switch (v.getId()) {
+//            case R.id.startTimer:
+//                startCountDown(v);
+//                break;
+//            case R.id.cancelTimer:
+//                stopCountDown(v);
+//                break;
+//        }
+//    }
+
 
     class MyViewHolder2 extends RecyclerView.ViewHolder {
 
@@ -112,8 +261,88 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
             difficulty = (ImageView) itemView.findViewById(R.id.ivDifficulty);
             stamina = (ImageView) itemView.findViewById(R.id.ivStamina);
 //            image = (ImageView) itemView.findViewById(R.id.iv1);
+
+
         }
     }
+
+    public void stopCountDown(View view) {
+
+        countDownView.setProgress(time,time);
+        countDownTimer.cancel();
+        seconds=59;
+        countDownView.setVisibility(View.INVISIBLE);
+        cancelTimerBt.setVisibility(View.GONE);
+        startTimerBt.setVisibility(View.VISIBLE);
+    }
+
+    protected void startCountDown(final View view) {
+
+        //String timeInterval = etTime.getText().toString();
+
+
+        //etTime.getText().clear();
+        view.setVisibility(View.GONE); // hide button
+        // show progress view
+        countDownView.setVisibility(View.VISIBLE);
+        cancelTimerBt.setVisibility(View.VISIBLE); // show cancel button
+
+        progress = 1;
+        endTime = 25; // up to finish time
+        minutes = endTime-1;
+        time= endTime*60;
+
+        countDownTimer = new CountDownTimer(time * 1000 /*finishTime**/, 1000 /*interval**/) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                countDownView.setProgress(progress, time );
+                progress = progress + 1;
+
+                if(seconds >= 0)
+                {
+
+                    mTvMinutes.setText(minutes+"");
+                    if(seconds <10){
+                        mTvSeconds.setText("0"+seconds);
+                        seconds--;
+                        count++;
+                    }else{
+                        mTvSeconds.setText(seconds+"");
+                        seconds--;
+                        count++;
+                    }
+
+                }
+
+                if(count == 60 && minutes != 0)
+                {
+                    minutes--;
+                    count = 0;
+                    mTvMinutes.setText(minutes+"");
+                    seconds = 59;
+                }
+
+            }
+
+            @Override
+            public void onFinish() {
+                countDownView.setProgress(progress, time);
+                view.setVisibility(View.VISIBLE);
+                cancelTimerBt.setVisibility(View.GONE);
+                minutes=0;
+                seconds=59;
+            }
+        };
+        countDownTimer.start(); // start timer
+
+//        // hide softkeyboard
+//        View currentFocus = this.getCurrentFocus();
+//        if (currentFocus != null) {
+//            InputMethodManager imm = (InputMethodManager)this.getSystemService(Context.INPUT_METHOD_SERVICE);
+//            imm.hideSoftInputFromWindow(currentFocus.getWindowToken(), 0);
+//        }
+    }
+
 
 
 }

@@ -1,4 +1,4 @@
-package com.example.dobit.rplife.widget;
+package com.example.dobit.rplife.Home;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -16,7 +16,7 @@ import static android.view.animation.Animation.RELATIVE_TO_SELF;
  * Created by Basilan on 11/27/2016.
  */
 
-public class CircleCountDownView extends FrameLayout {
+public class  CircleCountDownView extends FrameLayout {
     private ProgressBar progressBarView;
     private TextView progressTextView;
 
