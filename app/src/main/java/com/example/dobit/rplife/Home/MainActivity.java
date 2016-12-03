@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //    RvAdapter adapter;
     RvAdapter2 adapter2;
     RvTabAdapter tabAdapter;
+    ImageView hub;
     ImageView tab;
     ImageView sidebar;
     ImageView header;
@@ -65,7 +66,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        Log.d("Testing1", stored.getText());
 //        Log.d("Testing2", stored.getDueDate());
 //        Log.d("Testing3", stored.getStartTime());
-
+        hub = (ImageView) findViewById(R.id.ivHub);
+        hub.setOnClickListener(this);
         mImgvProfilePic = (ImageView)findViewById(R.id.ivCharacterFace);
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(this);
@@ -82,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tabAdapter = new RvTabAdapter(this, TabData.getTabData());
         adapter2.notifyDataSetChanged();
         recyclerView.setAdapter(adapter2);
-        //addTaskSound = MediaPlayer.create(this, R.raw.link_start);
+        addTaskSound = MediaPlayer.create(this, R.raw.whatcha);
 
         //profile page
         mImgvProfilePic.setOnClickListener(new View.OnClickListener() {
@@ -111,6 +113,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.fab:
+                addTaskSound.start();
                 dialog = new Dialog(MainActivity.this,R.style.Theme_D1NoTitleDim);
                 dialog.setContentView(R.layout.activity_add_task);
                // dialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -144,7 +147,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 recyclerView.setAdapter(adapter2);
                 adapter2.notifyDataSetChanged();
                 dialog.dismiss();
+                break;
 
+            case  R.id.ivHub:
+                Intent intent = new Intent(MainActivity.this, QuestActivity.class);
+                startActivity(intent);
         }
     }
 
@@ -158,7 +165,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String[] dueDate = {"12/15/16", "12/16/16", "12/18/16"};
             String[] startTime = {"1:00 PM", "2:00 PM", "5:00 PM"};
             String[] endTime = {"1:30 PM", "2:40 PM", "6:00 PM"};
-            String[] task = {"Eat pizza", "Buy present", "Meet with group"};
+            String[] task = {"Eat pizza", "Buy present", "Meet group"};
             int[] sidebar = {R.drawable.orange_sidebar, R.drawable.orange_sidebar, R.drawable.orange_sidebar};
             int[] sidebar2 = {R.drawable.green_card_sidebar, R.drawable.green_card_sidebar, R.drawable.green_card_sidebar};
             int[] difficulty = {R.drawable.green_difficulty_bar, R.drawable.yellow_difficulty_bar, R.drawable.red_difficulty_bar};

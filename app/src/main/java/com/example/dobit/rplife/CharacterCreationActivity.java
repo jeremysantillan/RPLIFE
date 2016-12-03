@@ -3,6 +3,7 @@ package com.example.dobit.rplife;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +23,7 @@ public class CharacterCreationActivity extends AppCompatActivity implements View
     ImageView imageView;
     private EditText txt_name;
     private ImageView mImgNextBtn;
+    MediaPlayer homePageSound;
 
 
     @Override
@@ -47,14 +49,14 @@ public class CharacterCreationActivity extends AppCompatActivity implements View
         btnClothes.setTypeface(myCustomFont);
         btnHair.setTypeface(myCustomFont);
         btnBody.setTypeface(myCustomFont);
-
         txt_name.setTypeface(myCustomFont);
-
+        homePageSound = MediaPlayer.create(this, R.raw.welcome_back);
         mImgNextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(CharacterCreationActivity.this,MainActivity.class);
                 startActivity(intent);
+                homePageSound.start();
             }
         });
 
