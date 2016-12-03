@@ -3,10 +3,10 @@
     package="com.example.dobit.rplife">
 
     <application
-        android:largeHeap="true"
         android:allowBackup="true"
         android:icon="@drawable/rplifelogo"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".SplashActivity">
@@ -27,7 +27,9 @@
         <activity android:name=".Home.BebasEditText" />
         <activity android:name=".Home.BebasTextView" />
         <activity android:name=".Home.MainActivity" />
-        <activity android:name=".Home.ReplicaMain"></activity>
+        <activity android:name=".Home.ReplicaMain" />
+        <activity android:name=".BossFight" />
+        <activity android:name=".PartyView"></activity>
     </application>
 
 </manifest>

@@ -27,7 +27,7 @@
             android:text=":"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView4"
+            android:id="@+id/loot"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/tvMinutes"
             android:layout_toEndOf="@+id/tvMinutes" />
@@ -47,8 +47,8 @@
             app:layout_constraintRight_toRightOf="parent"
             android:layout_alignBaseline="@+id/tvMinutes"
             android:layout_alignBottom="@+id/tvMinutes"
-            android:layout_toRightOf="@+id/textView4"
-            android:layout_toEndOf="@+id/textView4" />
+            android:layout_toRightOf="@+id/loot"
+            android:layout_toEndOf="@+id/loot" />
 
         <TextView
             android:id="@+id/tvMinutes"
