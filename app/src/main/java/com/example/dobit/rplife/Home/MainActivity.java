@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     String sTimeEnd;
     Dialog dialog;
     ArrayList<Contents2> contents2 = new ArrayList<>();
+    MediaPlayer bossFightSound;
     ImageView mImgvProfilePic;
 //    ArrayAdapter<Contents2> mAdapter;
     ImageView btnPartyView;
@@ -70,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        Log.d("Testing3", stored.getStartTime());
         hub = (ImageView) findViewById(R.id.ivHub);
         hub.setOnClickListener(this);
+        bossFightSound = MediaPlayer.create(this, R.raw.defend);
         mImgvProfilePic = (ImageView)findViewById(R.id.ivCharacterFace);
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(this);
@@ -92,6 +94,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnPartyView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                bossFightSound.start();
                 Intent intent = new Intent(MainActivity.this, BossFight.class);
                 startActivity(intent);
             }
