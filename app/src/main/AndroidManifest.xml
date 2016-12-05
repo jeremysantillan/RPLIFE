@@ -28,13 +28,12 @@
         <activity android:name=".Home.BebasTextView" />
         <activity android:name=".Home.MainActivity" />
         <activity android:name=".Home.ReplicaMain" />
-<<<<<<< HEAD
         <activity android:name=".Home.HubChatActivity" />
         <activity android:name=".Home.QuestActivity"></activity>
-=======
+
         <activity android:name=".BossFight" />
         <activity android:name=".PartyView"></activity>
->>>>>>> 6c4f00d82e2069d1ca0446e90b92b59c779449c8
+
     </application>
 
 </manifest>
