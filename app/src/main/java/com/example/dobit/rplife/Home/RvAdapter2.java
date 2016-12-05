@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.Image;
+import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -18,6 +19,8 @@ import android.widget.Toast;
 
 import com.example.dobit.rplife.FocusActivity;
 import com.example.dobit.rplife.R;
+import com.github.mmin18.widget.RealtimeBlurView;
+
 
 import java.util.ArrayList;
 
@@ -28,6 +31,7 @@ import java.util.ArrayList;
 public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
     int[] check = new int[20];
     int temp;
+    MediaPlayer focusSound;
     Context context;
     ArrayList<Contents2> data;
     LayoutInflater inflater;
@@ -43,6 +47,7 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
     int endTime;
     CountDownTimer countDownTimer;
 
+
     int count = 0;
     int seconds =59;
     int minutes;
@@ -50,9 +55,12 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
     int time;
     Dialog dialog;
 
+
     ////////////////////////////////////////////////////////
 
-    //dialog declarations
+    //blur
+    com.github.mmin18.widget.RealtimeBlurView blurView;
+
 
 
     public RvAdapter2(Context context, ArrayList<Contents2> data) {
@@ -64,6 +72,7 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
     @Override
     public MyViewHolder2 onCreateViewHolder(ViewGroup parent, int position) {
 
+
         View view = inflater.inflate(R.layout.temp, parent, false);
 
         MyViewHolder2 holder = new MyViewHolder2(view);
@@ -73,18 +82,19 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
 
     @Override
     public void onBindViewHolder(final MyViewHolder2 myViewHolder2, final int position) {
-
         myViewHolder2.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(check[temp] == 1){
+                    focusSound.start();
                     myViewHolder2.sidebar.setImageResource(data.get(position).sidebar2);
 //                   myViewHolder2.sidebar.setImageDrawable(R.drawable.orange_sidebar);
 //                    Intent intent = new Intent(context, FocusActivity.class);
 //                    context.startActivity(intent);
 
                 }
-
+                focusSound = MediaPlayer.create(context, R.raw.stay_focused);
+              //  blurView.setVisibility(View.VISIBLE);
                 dialog = new Dialog(context,R.style.Theme_D1NoTitleDim);
                 dialog.getWindow().setLayout(1300,2000);
 //                dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
@@ -94,6 +104,7 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
                 cancelTimerBt = (ImageView) dialog.findViewById(R.id.cancelTimer);
                 mTvMinutes = (TextView)dialog.findViewById(R.id.tvMinutes);
                 mTvSeconds = (TextView)dialog.findViewById(R.id.tvSec);
+
                 dialog.show();
 
                 progress = 0;
@@ -182,6 +193,7 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
                         cancelTimerBt.setVisibility(View.GONE);
                         startTimerBt.setVisibility(View.VISIBLE);
                         dialog.dismiss();
+
                     }
                 });
 
@@ -189,6 +201,7 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
                     @Override
                     public void onCancel(DialogInterface dialog) {
                         dialog.dismiss();
+
                         countDownView.setProgress(time,time);
                         countDownTimer.cancel();
                         seconds=59;
@@ -235,7 +248,6 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
 
 
     class MyViewHolder2 extends RecyclerView.ViewHolder {
-
         TextView something;
         TextView minutesOrHours;
         TextView dueDate;
@@ -261,7 +273,6 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
             difficulty = (ImageView) itemView.findViewById(R.id.ivDifficulty);
             stamina = (ImageView) itemView.findViewById(R.id.ivStamina);
 //            image = (ImageView) itemView.findViewById(R.id.iv1);
-
 
         }
     }

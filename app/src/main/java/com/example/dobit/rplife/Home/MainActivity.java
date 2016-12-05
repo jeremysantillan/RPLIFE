@@ -3,6 +3,7 @@ package com.example.dobit.rplife.Home;
 import android.app.Dialog;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.os.CountDownTimer;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import android.widget.TextView;
 import com.example.dobit.rplife.BossFight;
 import com.example.dobit.rplife.ProfileActvity;
 import com.example.dobit.rplife.R;
+import com.github.mmin18.widget.RealtimeBlurView;
 
 import java.util.ArrayList;
 
@@ -51,12 +53,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     String sTimeEnd;
     Dialog dialog;
     ArrayList<Contents2> contents2 = new ArrayList<>();
+    MediaPlayer bossFightSound;
     ImageView mImgvProfilePic;
 //    ArrayAdapter<Contents2> mAdapter;
     ImageView btnPartyView;
+    com.github.mmin18.widget.RealtimeBlurView blurView;
 
     int check = 0;
     int flag = 0;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        Log.d("Testing3", stored.getStartTime());
         hub = (ImageView) findViewById(R.id.ivHub);
         hub.setOnClickListener(this);
+        bossFightSound = MediaPlayer.create(this, R.raw.defend);
         mImgvProfilePic = (ImageView)findViewById(R.id.ivCharacterFace);
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(this);
@@ -87,11 +94,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         adapter2.notifyDataSetChanged();
         recyclerView.setAdapter(adapter2);
         addTaskSound = MediaPlayer.create(this, R.raw.whatcha);
+        blurView = (RealtimeBlurView) findViewById(R.id.blurviewHome);
 
         btnPartyView = (ImageView) findViewById(R.id.btn_partyview);
         btnPartyView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                bossFightSound.start();
                 Intent intent = new Intent(MainActivity.this, BossFight.class);
                 startActivity(intent);
             }
@@ -105,6 +114,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
             }
         });
+
+
 
 //        recyclerView = (RecyclerView) findViewById(R.id.rv);
 //        adapter = new RvAdapter(this, Data.getData());
@@ -143,6 +154,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 timeStart = (EditText) dialog.findViewById(R.id.etTimeStart);
                 timeEnd = (EditText) dialog.findViewById(R.id.etTimeEnd);
 
+                blurView.setVisibility(View.VISIBLE);
                 dialog.show();
                // addTaskSound.start();
 //                Intent intent = new Intent(HomePageActivity.this, AddTask.class);
@@ -158,11 +170,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 recyclerView.setAdapter(adapter2);
                 adapter2.notifyDataSetChanged();
                 dialog.dismiss();
+                blurView.setVisibility(View.INVISIBLE);
                 break;
 
             case  R.id.ivHub:
                 Intent intent = new Intent(MainActivity.this, QuestActivity.class);
                 startActivity(intent);
+
+//            case R.id.ivCancel:
+//                dialog.dismiss();
+//                blurView.setVisibility(View.INVISIBLE);
+//                break;
+
+
         }
     }
 
@@ -287,4 +307,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        }
 //        return super.onTouchEvent(motionEvent);
 //    }
+
+
 }

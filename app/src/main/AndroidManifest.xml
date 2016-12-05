@@ -29,11 +29,18 @@
         <activity android:name=".Home.MainActivity" />
         <activity android:name=".Home.ReplicaMain" />
         <activity android:name=".Home.HubChatActivity" />
+<<<<<<< HEAD
         <activity android:name=".Home.QuestActivity"></activity>
 
         <activity android:name=".BossFight" />
         <activity android:name=".PartyView"></activity>
 
+=======
+        <activity android:name=".Home.QuestActivity" />
+        <activity android:name=".BossFight" />
+        <activity android:name=".PartyView" />
+        <activity android:name=".NewSkill"></activity>
+>>>>>>> 1155bfe71abbb3bbc7a765ab7bb0afede40a4fe1
     </application>
 
 </manifest>
