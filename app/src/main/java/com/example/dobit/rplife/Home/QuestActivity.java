@@ -26,7 +26,6 @@ public class QuestActivity extends AppCompatActivity implements View.OnClickList
     TextView tvGuild;
     TextView tvChat;
     TextView tvQuests;
-    EditText etChat;
     CardView cardView;
 
 
@@ -38,11 +37,11 @@ public class QuestActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_quest);
         cardView = (CardView) findViewById(R.id.cvQuest);
         footer = (ImageView) findViewById(R.id.ivFooter);
+
         tvQuests = (TextView) findViewById(R.id.tvQuests);
         tvGuild = (TextView) findViewById(R.id.tvGuild);
         tvGuild.setOnClickListener(this);
         tvChat = (TextView) findViewById(R.id.tvChat);
-        etChat = (EditText) findViewById(R.id.etChat);
         chatAdapter = new ChatAdapter(this, ChatData.getChatData());
         tempAdapter = new ChatTempAdapter(this, ChatData.getChatData());
         questAdapter = new QuestAdapter2(this, QuestData.getQuestData());
@@ -62,6 +61,7 @@ public class QuestActivity extends AppCompatActivity implements View.OnClickList
                 tvChat.setTextColor(Color.parseColor("#FFFFFF"));
                 recyclerView.setAdapter(guildAdapter);
                 footer.setImageDrawable(getResources().getDrawable(R.drawable.hub_footer));
+                recyclerView.setBackgroundResource(R.color.RPLIFE_TXT_COLOR);
                 break;
 
             case R.id.tvQuests:
@@ -70,6 +70,7 @@ public class QuestActivity extends AppCompatActivity implements View.OnClickList
                 tvQuests.setTextColor(Color.parseColor("#F96908"));
                 recyclerView.setAdapter(questAdapter);
                 footer.setImageDrawable(getResources().getDrawable(R.drawable.hub_footer));
+                recyclerView.setBackgroundResource(R.color.RPLIFE_TXT_COLOR);
                 break;
 
             case R.id.tvChat:
@@ -77,8 +78,8 @@ public class QuestActivity extends AppCompatActivity implements View.OnClickList
                 tvQuests.setTextColor(Color.parseColor("#FFFFFF"));
                 tvChat.setTextColor(Color.parseColor("#F96908"));
                 recyclerView.setAdapter(tempAdapter);
+                recyclerView.setBackgroundResource(R.drawable.background);
                 footer.setImageDrawable(getResources().getDrawable(R.drawable.chat_footer));
-                etChat.setVisibility(View.VISIBLE);
 
         }
     }

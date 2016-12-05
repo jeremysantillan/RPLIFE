@@ -30,8 +30,15 @@
         <activity android:name=".Home.ReplicaMain" />
         <activity android:name=".Home.HubChatActivity" />
         <activity android:name=".Home.QuestActivity"></activity>
+
+        <activity android:name=".Home.QuestActivity"></activity>
+
         <activity android:name=".BossFight" />
         <activity android:name=".PartyView"></activity>
+        <activity android:name=".Home.QuestActivity" />
+        <activity android:name=".BossFight" />
+        <activity android:name=".PartyView" />
+        <activity android:name=".NewSkill"></activity>
     </application>
 
 </manifest>
