@@ -35,7 +35,7 @@ public class AddTask extends AppCompatActivity implements SeekBar.OnSeekBarChang
         setContentView(R.layout.activity_add_task);
         add = (ImageView) findViewById(R.id.ivAddNewTask);
         add.setOnClickListener(this);
-        cancel = (ImageView) findViewById(R.id.ivCancel);
+        cancel = (ImageView) findViewById(R.id.ivTaskCancel);
         cancel.setOnClickListener(this);
         seekBar = (SeekBar) findViewById(R.id.seeker);
         seekBar.setOnSeekBarChangeListener(this);
@@ -93,7 +93,7 @@ public class AddTask extends AppCompatActivity implements SeekBar.OnSeekBarChang
                 intent.putExtra("myData", contents2);
                 startActivity(intent);
 
-            case R.id.ivCancel:
+            case R.id.ivTaskCancel:
                 finish();
         }
     }

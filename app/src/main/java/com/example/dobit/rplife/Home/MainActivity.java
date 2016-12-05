@@ -1,6 +1,7 @@
 package com.example.dobit.rplife.Home;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
@@ -19,13 +20,15 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.example.dobit.rplife.BossFight;
+import com.example.dobit.rplife.InitializationActivity;
+import com.example.dobit.rplife.PartyView;
 import com.example.dobit.rplife.ProfileActvity;
 import com.example.dobit.rplife.R;
 import com.github.mmin18.widget.RealtimeBlurView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, SeekBar.OnSeekBarChangeListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, SeekBar.OnSeekBarChangeListener {
 
     FloatingActionButton fab;
     CardView cv;
@@ -55,13 +58,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ArrayList<Contents2> contents2 = new ArrayList<>();
     MediaPlayer bossFightSound;
     ImageView mImgvProfilePic;
-//    ArrayAdapter<Contents2> mAdapter;
+    //    ArrayAdapter<Contents2> mAdapter;
     ImageView btnPartyView;
     com.github.mmin18.widget.RealtimeBlurView blurView;
 
     int check = 0;
     int flag = 0;
-
 
 
     @Override
@@ -77,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         hub = (ImageView) findViewById(R.id.ivHub);
         hub.setOnClickListener(this);
         bossFightSound = MediaPlayer.create(this, R.raw.defend);
-        mImgvProfilePic = (ImageView)findViewById(R.id.ivCharacterFace);
+        mImgvProfilePic = (ImageView) findViewById(R.id.ivCharacterFace);
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(this);
 //        cv = (CardView) findViewById(R.id.cv);
@@ -100,9 +102,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnPartyView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bossFightSound.start();
-                Intent intent = new Intent(MainActivity.this, BossFight.class);
-                startActivity(intent);
+//                bossFightSound.start();
+                blurView.setVisibility(View.VISIBLE);
+                dialog = new Dialog(MainActivity.this, R.style.Theme_D1NoTitleDim);
+                dialog.setContentView(R.layout.activity_party_view);
+                ImageView boss_btn = (ImageView) dialog.findViewById(R.id.boss_btn);
+                dialog.show();
+                dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                    @Override
+                    public void onCancel(DialogInterface dialog) {
+                        dialog.dismiss();
+                        blurView.setVisibility(View.INVISIBLE);
+                    }
+                });
+                boss_btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        bossFightSound.start();
+                        Intent intent = new Intent(MainActivity.this, BossFight.class);
+                        startActivity(intent);
+                        blurView.setVisibility(View.INVISIBLE);
+                        dialog.dismiss();
+//                        finish();
+
+
+                    }
+                });
             }
         });
 
@@ -112,9 +137,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ProfileActvity.class);
                 startActivity(intent);
+//                finish();
             }
         });
-
 
 
 //        recyclerView = (RecyclerView) findViewById(R.id.rv);
@@ -126,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.ivTodo:
                 changeTab();
                 changeHeader();
@@ -136,14 +161,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.fab:
                 addTaskSound.start();
-                dialog = new Dialog(MainActivity.this,R.style.Theme_D1NoTitleDim);
+                dialog = new Dialog(MainActivity.this, R.style.Theme_D1NoTitleDim);
                 dialog.setContentView(R.layout.activity_add_task);
-               // dialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                // dialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
                 dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
                 add = (ImageView) dialog.findViewById(R.id.ivAddNewTask);
                 add.isClickable();
                 add.setOnClickListener(this);
-                cancel = (ImageView) dialog.findViewById(R.id.ivCancel);
+                cancel = (ImageView) dialog.findViewById(R.id.ivTaskCancel);
                 cancel.setOnClickListener(this);
                 seekBar = (SeekBar) dialog.findViewById(R.id.seeker);
                 seekBar.setOnSeekBarChangeListener(this);
@@ -156,7 +181,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 blurView.setVisibility(View.VISIBLE);
                 dialog.show();
-               // addTaskSound.start();
+                dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                    @Override
+                    public void onCancel(DialogInterface dialog) {
+                        blurView.setVisibility(View.INVISIBLE);
+                    }
+                });
+                // addTaskSound.start();
 //                Intent intent = new Intent(HomePageActivity.this, AddTask.class);
 //                startActivity(intent);
                 break;
@@ -173,24 +204,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 blurView.setVisibility(View.INVISIBLE);
                 break;
 
-            case  R.id.ivHub:
+            case R.id.ivHub:
                 Intent intent = new Intent(MainActivity.this, QuestActivity.class);
                 startActivity(intent);
+//                finish();
 
-//            case R.id.ivCancel:
-//                dialog.dismiss();
-//                blurView.setVisibility(View.INVISIBLE);
-//                break;
+            case R.id.ivTaskCancel:
+                dialog.dismiss();
+                blurView.setVisibility(View.INVISIBLE);
+                break;
 
 
         }
     }
 
-    public ArrayList<Contents2> getData(){
+    public ArrayList<Contents2> getData() {
 
         Contents2 current;
 
-        if(flag == 0) {
+        if (flag == 0) {
             String[] text = {"30", "40", "60"};
             String[] mOrH = {"minutes", "minutes", "minutes"};
             String[] dueDate = {"12/15/16", "12/16/16", "12/18/16"};
@@ -217,9 +249,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 current.task = task[i];
                 contents2.add(current);
             }
-        }
-
-        else {
+        } else {
             current = new Contents2();
             current.text = "30";
             current.sidebar = R.drawable.green_card_sidebar;
@@ -236,32 +266,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return contents2;
     }
 
-    public void changeHeader(){
-        if(check == 1){
+    public void changeHeader() {
+        if (check == 1) {
             header.setImageDrawable(getResources().getDrawable(R.drawable.habits_header_stuff));
-        }
-        else {
+        } else {
             header.setImageDrawable(getResources().getDrawable(R.drawable.header_stuff));
         }
     }
 
-    public void changeTab(){
-        if(check == 1){
+    public void changeTab() {
+        if (check == 1) {
             tab.setImageDrawable(getResources().getDrawable(R.drawable.todolist_highlight));
             check = 0;
-        }
-        else{
+        } else {
             tab.setImageDrawable(getResources().getDrawable(R.drawable.habits_highlight));
             check = 1;
         }
     }
 
-    public void changeCards(){
-        if(check == 1){
+    public void changeCards() {
+        if (check == 1) {
             recyclerView.setAdapter(tabAdapter);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        }
-        else{
+        } else {
             recyclerView.setAdapter(adapter2);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
         }
@@ -307,6 +334,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        }
 //        return super.onTouchEvent(motionEvent);
 //    }
+
 
 
 }

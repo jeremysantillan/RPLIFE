@@ -57,6 +57,7 @@ public class CharacterCreationActivity extends AppCompatActivity implements View
                 Intent intent = new Intent(CharacterCreationActivity.this,MainActivity.class);
                 startActivity(intent);
                 homePageSound.start();
+                finish();
             }
         });
 

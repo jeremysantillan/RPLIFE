@@ -2,6 +2,7 @@ package com.example.dobit.rplife;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.dobit.rplife.Home.MainActivity;
 import com.github.mmin18.widget.RealtimeBlurView;
 
 public class ProfileActvity extends AppCompatActivity {
@@ -147,4 +149,11 @@ public class ProfileActvity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(ProfileActvity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }
