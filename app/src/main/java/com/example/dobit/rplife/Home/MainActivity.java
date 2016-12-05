@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         adapter2.notifyDataSetChanged();
         recyclerView.setAdapter(adapter2);
         addTaskSound = MediaPlayer.create(this, R.raw.whatcha);
-        blurView = (RealtimeBlurView) findViewById(R.id.blurviewHome);
+//        blurView = (RealtimeBlurView) findViewById(R.id.blurviewHome);
 
         btnPartyView = (ImageView) findViewById(R.id.btn_partyview);
         btnPartyView.setOnClickListener(new View.OnClickListener() {
@@ -222,6 +222,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Contents2 current;
 
+<<<<<<< HEAD
         if (flag == 0) {
             String[] text = {"30", "40", "60"};
             String[] mOrH = {"minutes", "minutes", "minutes"};
@@ -236,6 +237,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
             for (int i = 0; i < 3; i++) {
+=======
+        if(flag == 0) {
+            String[] text = {"30", "40", "60", "25", "30"};
+            String[] mOrH = {"minutes", "minutes", "minutes", "minutes", "minutes"};
+            String[] dueDate = {"12/15/16", "12/16/16", "12/18/16", "12/19/16", "12/19/16"};
+            String[] startTime = {"1:00 PM", "2:00 PM", "5:00 PM", "4:00", "5:00"};
+            String[] endTime = {"1:30 PM", "2:40 PM", "6:00 PM", "4:25", "5:30"};
+            String[] task = {"Code Android", "Buy present", "Meet group", "Meditate", "Do assignment"};
+            int[] sidebar = {R.drawable.orange_sidebar, R.drawable.orange_sidebar, R.drawable.orange_sidebar, R.drawable.orange_sidebar, R.drawable.orange_sidebar};
+            int[] sidebar2 = {R.drawable.green_card_sidebar, R.drawable.green_card_sidebar, R.drawable.green_card_sidebar, R.drawable.green_card_sidebar, R.drawable.green_card_sidebar};
+            int[] difficulty = {R.drawable.green_difficulty_bar, R.drawable.yellow_difficulty_bar, R.drawable.red_difficulty_bar, R.drawable.yellow_difficulty_bar, R.drawable.red_difficulty_bar};
+            int[] stamina = {R.drawable.staminabar3, R.drawable.staminabar2, R.drawable.staminabar1, R.drawable.staminabar2, R.drawable.staminabar1};
+
+
+            for (int i = 0; i < 5; i++) {
+>>>>>>> 3adc3213f5bf5c9505334d8bd9be66eadcd33124
                 current = new Contents2();
                 current.sidebar2 = sidebar2[i];
                 current.sidebar = sidebar[i];
