@@ -30,10 +30,6 @@
         <activity android:name=".Home.ReplicaMain" />
         <activity android:name=".Home.HubChatActivity" />
         <activity android:name=".Home.QuestActivity"></activity>
-<<<<<<< HEAD
-=======
-
->>>>>>> 22b3212433273d31feb7050f83d84fb898bcd3fd
         <activity android:name=".BossFight" />
         <activity android:name=".PartyView"></activity>
     </application>
