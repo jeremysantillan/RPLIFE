@@ -1,5 +1,6 @@
 package com.example.dobit.rplife.Home;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.dobit.rplife.HomePageActivity;
 import com.example.dobit.rplife.R;
 
 public class QuestActivity extends AppCompatActivity implements View.OnClickListener {
@@ -82,5 +84,13 @@ public class QuestActivity extends AppCompatActivity implements View.OnClickList
                 footer.setImageDrawable(getResources().getDrawable(R.drawable.chat_footer));
 
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(QuestActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

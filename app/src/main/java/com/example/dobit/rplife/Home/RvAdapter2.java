@@ -44,12 +44,12 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
     private TextView mTvSeconds;
     private TextView mTvTimer;
     int progress;
-    int endTime;
+    double endTime;
     CountDownTimer countDownTimer;
 
 
     int count = 0;
-    int seconds =59;
+    int seconds =9;
     int minutes;
     int hours=0;
     int time;
@@ -91,7 +91,6 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
 //                   myViewHolder2.sidebar.setImageDrawable(R.drawable.orange_sidebar);
 //                    Intent intent = new Intent(context, FocusActivity.class);
 //                    context.startActivity(intent);
-
                 }
                 focusSound = MediaPlayer.create(context, R.raw.stay_focused);
               //  blurView.setVisibility(View.VISIBLE);
@@ -104,13 +103,15 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
                 cancelTimerBt = (ImageView) dialog.findViewById(R.id.cancelTimer);
                 mTvMinutes = (TextView)dialog.findViewById(R.id.tvMinutes);
                 mTvSeconds = (TextView)dialog.findViewById(R.id.tvSec);
-
+                mTvMinutes.setText("00");
                 dialog.show();
 
+//                progress = 0;
+//                endTime = 25; // up to finish time
+//                minutes = endTime;
+//                time= endTime;
                 progress = 0;
-                endTime = 25; // up to finish time
-                minutes = endTime;
-                time= endTime;
+                time = 9;
 
                 countDownView.setVisibility(View.VISIBLE);
                 countDownView.setProgress(progress,time);
@@ -126,21 +127,28 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
                         // show progress view
                         cancelTimerBt.setVisibility(View.VISIBLE); // show cancel button
 
+//                        progress = 1;
+//                        endTime = 25; // up to finish time
+//                        minutes = endTime-1;
+//                        time= endTime*60;
+                        mTvMinutes.setText("00");
                         progress = 1;
-                        endTime = 25; // up to finish time
-                        minutes = endTime-1;
-                        time= endTime*60;
+                        endTime =  0.0833333;
+                        minutes = 0;
+                        time = 10;
+
+
 
                         countDownTimer = new CountDownTimer(time * 1000 /*finishTime**/, 1000 /*interval**/) {
                             @Override
                             public void onTick(long millisUntilFinished) {
                                countDownView.setProgress(progress, time );
                                 progress = progress + 1;
-
-                                if(seconds >= 0)
+                                mTvMinutes.setText("00");
+                                if(seconds > 0)
                                 {
 
-                                    mTvMinutes.setText(minutes+"");
+                                    //mTvMinutes.setText(minutes+"");
                                     if(seconds <10){
                                         mTvSeconds.setText("0"+seconds);
                                         seconds--;
@@ -153,13 +161,13 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
 
                                 }
 
-                                if(count == 60 && minutes != 0)
-                                {
-                                    minutes--;
-                                    count = 0;
-                                    mTvMinutes.setText(minutes+"");
-                                    seconds = 59;
-                                }
+//                                if(count == 60 && minutes != 0)
+//                                {
+//                                    minutes--;
+//                                    count = 0;
+//                                    mTvMinutes.setText(minutes+"");
+//                                    seconds = 59;
+//                                }
 
                             }
 
@@ -168,8 +176,14 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
                                 countDownView.setProgress(progress, time);
                                 view.setVisibility(View.VISIBLE);
                                 cancelTimerBt.setVisibility(View.GONE);
-                                minutes=0;
-                                seconds=59;
+//                                minutes=0;
+//                                seconds=59;
+                                minutes = 0;
+                                seconds = 9;
+                                time = 10;
+                                progress =1;
+                                mTvMinutes.setText("00");
+                                mTvSeconds.setText("00");
                             }
                         };
                         countDownTimer.start(); // start timer
@@ -188,7 +202,10 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
                     public void onClick(View v) {
                         countDownView.setProgress(time,time);
                         countDownTimer.cancel();
-                        seconds=59;
+                        //seconds=59;
+                        seconds=9;
+                        time = 10;
+                        progress=1;
                         countDownView.setVisibility(View.INVISIBLE);
                         cancelTimerBt.setVisibility(View.GONE);
                         startTimerBt.setVisibility(View.VISIBLE);
@@ -201,10 +218,12 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
                     @Override
                     public void onCancel(DialogInterface dialog) {
                         dialog.dismiss();
-
                         countDownView.setProgress(time,time);
                         countDownTimer.cancel();
-                        seconds=59;
+                       // seconds=59;
+                        seconds=9;
+                        time = 9;
+                        progress=0;
                         countDownView.setVisibility(View.INVISIBLE);
                         cancelTimerBt.setVisibility(View.GONE);
                         startTimerBt.setVisibility(View.VISIBLE);
@@ -287,72 +306,72 @@ public class RvAdapter2 extends RecyclerView.Adapter<RvAdapter2.MyViewHolder2> {
         startTimerBt.setVisibility(View.VISIBLE);
     }
 
-    protected void startCountDown(final View view) {
-
-        //String timeInterval = etTime.getText().toString();
-
-
-        //etTime.getText().clear();
-        view.setVisibility(View.GONE); // hide button
-        // show progress view
-        countDownView.setVisibility(View.VISIBLE);
-        cancelTimerBt.setVisibility(View.VISIBLE); // show cancel button
-
-        progress = 1;
-        endTime = 25; // up to finish time
-        minutes = endTime-1;
-        time= endTime*60;
-
-        countDownTimer = new CountDownTimer(time * 1000 /*finishTime**/, 1000 /*interval**/) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                countDownView.setProgress(progress, time );
-                progress = progress + 1;
-
-                if(seconds >= 0)
-                {
-
-                    mTvMinutes.setText(minutes+"");
-                    if(seconds <10){
-                        mTvSeconds.setText("0"+seconds);
-                        seconds--;
-                        count++;
-                    }else{
-                        mTvSeconds.setText(seconds+"");
-                        seconds--;
-                        count++;
-                    }
-
-                }
-
-                if(count == 60 && minutes != 0)
-                {
-                    minutes--;
-                    count = 0;
-                    mTvMinutes.setText(minutes+"");
-                    seconds = 59;
-                }
-
-            }
-
-            @Override
-            public void onFinish() {
-                countDownView.setProgress(progress, time);
-                view.setVisibility(View.VISIBLE);
-                cancelTimerBt.setVisibility(View.GONE);
-                minutes=0;
-                seconds=59;
-            }
-        };
-        countDownTimer.start(); // start timer
-
-//        // hide softkeyboard
-//        View currentFocus = this.getCurrentFocus();
-//        if (currentFocus != null) {
-//            InputMethodManager imm = (InputMethodManager)this.getSystemService(Context.INPUT_METHOD_SERVICE);
-//            imm.hideSoftInputFromWindow(currentFocus.getWindowToken(), 0);
-//        }
-    }
+//    protected void startCountDown(final View view) {
+//
+//        //String timeInterval = etTime.getText().toString();
+//
+//
+//        //etTime.getText().clear();
+//        view.setVisibility(View.GONE); // hide button
+//        // show progress view
+//        countDownView.setVisibility(View.VISIBLE);
+//        cancelTimerBt.setVisibility(View.VISIBLE); // show cancel button
+//
+//        progress = 1;
+//        endTime = 25; // up to finish time
+//        minutes = endTime-1;
+//        time= endTime*60;
+//
+//        countDownTimer = new CountDownTimer(time * 1000 /*finishTime**/, 1000 /*interval**/) {
+//            @Override
+//            public void onTick(long millisUntilFinished) {
+//                countDownView.setProgress(progress, time );
+//                progress = progress + 1;
+//
+//                if(seconds >= 0)
+//                {
+//
+//                    mTvMinutes.setText(minutes+"");
+//                    if(seconds <10){
+//                        mTvSeconds.setText("0"+seconds);
+//                        seconds--;
+//                        count++;
+//                    }else{
+//                        mTvSeconds.setText(seconds+"");
+//                        seconds--;
+//                        count++;
+//                    }
+//
+//                }
+//
+//                if(count == 60 && minutes != 0)
+//                {
+//                    minutes--;
+//                    count = 0;
+//                    mTvMinutes.setText(minutes+"");
+//                    seconds = 59;
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onFinish() {
+//                countDownView.setProgress(progress, time);
+//                view.setVisibility(View.VISIBLE);
+//                cancelTimerBt.setVisibility(View.GONE);
+//                minutes=0;
+//                seconds=59;
+//            }
+//        };
+//        countDownTimer.start(); // start timer
+//
+////        // hide softkeyboard
+////        View currentFocus = this.getCurrentFocus();
+////        if (currentFocus != null) {
+////            InputMethodManager imm = (InputMethodManager)this.getSystemService(Context.INPUT_METHOD_SERVICE);
+////            imm.hideSoftInputFromWindow(currentFocus.getWindowToken(), 0);
+////        }
+//    }
 
 
 

@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/rplifelogo"
+        android:icon="@drawable/logo_rp_life"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:supportsRtl="true"
@@ -29,6 +29,11 @@
         <activity android:name=".Home.MainActivity" />
         <activity android:name=".Home.ReplicaMain" />
         <activity android:name=".Home.HubChatActivity" />
+<<<<<<< HEAD
+=======
+        <activity android:name=".Home.QuestActivity"></activity>
+
+>>>>>>> 030d89af256c947b0bb3a710e98ea298e579f826
         <activity android:name=".Home.QuestActivity"></activity>
         <activity android:name=".BossFight" />
         <activity android:name=".PartyView"></activity>

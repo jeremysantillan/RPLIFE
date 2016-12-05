@@ -50,7 +50,7 @@ public class  CircleCountDownView extends FrameLayout {
         progressBarView.setSecondaryProgress(endTime);
         progressBarView.setProgress(startTime);
         int elapsedTime = endTime - startTime;
-        progressTextView.setText(String.valueOf(elapsedTime));
+       // progressTextView.setText(String.valueOf(elapsedTime));
     }
 }
 
