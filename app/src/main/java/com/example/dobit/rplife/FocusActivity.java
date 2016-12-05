@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.dobit.rplife.Home.CircleCountDownView;
 
+
 public class FocusActivity extends Activity implements View.OnClickListener {
 
     protected EditText etTime;
@@ -54,6 +55,7 @@ public class FocusActivity extends Activity implements View.OnClickListener {
         // set click listeners
         startTimerBt.setOnClickListener(this);
         cancelTimerBt.setOnClickListener(this);
+
 
     }
 

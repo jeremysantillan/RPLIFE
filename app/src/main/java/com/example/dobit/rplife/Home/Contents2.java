@@ -18,7 +18,6 @@ public class Contents2 implements Parcelable {
     public int sidebar2;
     public int difficulty;
     public int stamina;
-
     public Contents2() {
 
     }

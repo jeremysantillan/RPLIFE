@@ -5,107 +5,99 @@
     android:id="@+id/activity_hub"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginLeft="0dp"
+    android:layout_marginRight="0dp"
+    android:background="@color/colorPrimary"
     android:paddingBottom="@dimen/no_header_margin"
     android:paddingLeft="@dimen/no_header_margin"
     android:paddingRight="@dimen/no_header_margin"
     android:paddingTop="@dimen/no_header_margin"
-    android:layout_marginLeft="0dp"
-    android:layout_marginRight="0dp"
     tools:context="com.example.dobit.rplife.Home.QuestActivity">
 
+    <ImageView
+        android:id="@+id/ivHubHeader"
+        android:layout_width="380dp"
+        android:layout_height="135dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hub_header" />
 
+    <com.example.dobit.rplife.Home.BebasTextView
+        android:id="@+id/tvChat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:text="CHAT"
+        android:textColor="#efefef"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivHubHeader"
+        app:layout_constraintLeft_toLeftOf="@+id/ivHubHeader" />
 
+    <com.example.dobit.rplife.Home.BebasTextView
+        android:id="@+id/tvQuests"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:text="Quests"
+        android:textColor="#F96908"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivHubHeader"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintLeft_toRightOf="@+id/tvChat"
+        app:layout_constraintRight_toLeftOf="@+id/tvGuild" />
 
-        <ImageView
-            app:srcCompat="@drawable/hub_header"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/ivHubHeader"
-            android:layout_width="380dp"
-            android:scaleType="fitCenter"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_height="135dp"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.example.dobit.rplife.Home.BebasTextView
-            android:text="CHAT"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvChat"
-            android:textColor="@color/cardview_light_background"
-            android:textSize="24sp"
-            android:clickable="true"
-            android:onClick="onClick"
-            app:layout_constraintLeft_toLeftOf="@+id/ivHubHeader"
-            android:layout_marginStart="24dp"
-            android:layout_marginLeft="24dp"
-            app:layout_constraintBottom_toBottomOf="@+id/ivHubHeader"
-            android:layout_marginBottom="8dp" />
-
-        <com.example.dobit.rplife.Home.BebasTextView
-            android:text="Quests"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvQuests"
-            android:textColor="#F96908"
-            android:textSize="24sp"
-            android:clickable="true"
-            android:onClick="onClick"
-            app:layout_constraintRight_toLeftOf="@+id/tvGuild"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            app:layout_constraintLeft_toRightOf="@+id/tvChat"
-            android:layout_marginLeft="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/ivHubHeader"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintHorizontal_bias="0.55" />
-
-        <com.example.dobit.rplife.Home.BebasTextView
-            android:text="Guilds"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvGuild"
-            android:textColor="@color/cardview_light_background"
-            android:textSize="24sp"
-            android:clickable="true"
-            android:onClick="onClick"
-            app:layout_constraintRight_toRightOf="@+id/ivHubHeader"
-            app:layout_constraintBottom_toBottomOf="@+id/ivHubHeader"
-            android:layout_marginEnd="24dp"
-            android:layout_marginRight="24dp"
-            android:layout_marginBottom="8dp" />
+    <com.example.dobit.rplife.Home.BebasTextView
+        android:id="@+id/tvGuild"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:text="Guilds"
+        android:textColor="#efefef"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivHubHeader"
+        app:layout_constraintRight_toRightOf="@+id/ivHubHeader" />
     <!--</FrameLayout>-->
 
     <ImageView
-        app:srcCompat="@drawable/hub_footer"
         android:id="@+id/ivFooter"
-        android:layout_width="380dp"
-        android:layout_height="70dp"
+        android:layout_width="382dp"
+        android:layout_height="64dp"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/hub_footer"
+        app:layout_constraintHorizontal_bias="1.0" />
 
     <android.support.v7.widget.RecyclerView
-        android:layout_width="0dp"
         android:id="@+id/rvQuest"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="440dp"
         app:layout_constraintBottom_toTopOf="@+id/ivFooter"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_height="400dp"
-        app:layout_constraintHorizontal_bias="0.0">
+        android:background="#efefef"
+       >
 
     </android.support.v7.widget.RecyclerView>
-
-    <EditText
-        android:layout_width="296dp"
-        android:layout_height="41dp"
-        android:inputType="textPersonName"
-        android:visibility="invisible"
-        android:ems="10"
-        tools:layout_editor_absoluteY="510dp"
-        tools:layout_editor_absoluteX="45dp"
-        android:id="@+id/etChat" />
-
 
 </android.support.constraint.ConstraintLayout>
